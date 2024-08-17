@@ -9,8 +9,8 @@ Build Todolist
 
 [x] Make max move forward and backwards
 [x] Make max move side to side
-Make max rotate
-Make max attack
+[x] Make max rotate
+[x] Make max attack
 
 Make Freak move forward and backwards
 Make Freak move side to side

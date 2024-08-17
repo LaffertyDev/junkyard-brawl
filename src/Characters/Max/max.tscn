@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ga1ex7busmof" path="res://src/Characters/Max/max3.png" id="1_nx7hy"]
 [ext_resource type="Texture2D" uid="uid://brcocx6q6doft" path="res://src/Characters/Max/max_torso.png" id="2_u1ccp"]
 [ext_resource type="Texture2D" uid="uid://bmy80gftuxvjt" path="res://src/Characters/Max/max_leg.png" id="3_68rjg"]
-[ext_resource type="Texture2D" uid="uid://bq0u1ww7kkx16" path="res://src/Characters/Max/max_hammer.png" id="4_7digu"]
+[ext_resource type="SpriteFrames" uid="uid://cajnowuwd4by5" path="res://src/Characters/Max/max_hammer_sprite_frames.tres" id="5_wybb3"]
 [ext_resource type="Script" path="res://src/StateMachines/StateMachine.gd" id="6_qciws"]
 [ext_resource type="Script" path="res://src/Characters/Max/States/move_idle.gd" id="7_n808q"]
 [ext_resource type="Script" path="res://src/Characters/Max/States/move_cancel.gd" id="8_1ekhc"]
@@ -49,9 +49,11 @@ texture = ExtResource("3_68rjg")
 unique_name_in_owner = true
 texture = ExtResource("2_u1ccp")
 
-[node name="max_hammer" type="Sprite2D" parent="max_torso"]
+[node name="max_hammer" type="AnimatedSprite2D" parent="max_torso"]
+unique_name_in_owner = true
 position = Vector2(-29, -41)
-texture = ExtResource("4_7digu")
+sprite_frames = ExtResource("5_wybb3")
+animation = &"idle"
 
 [node name="MovementState" type="Node" parent="."]
 script = ExtResource("6_qciws")

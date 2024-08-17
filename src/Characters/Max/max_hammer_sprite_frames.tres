@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://cajnowuwd4by5"]
+
+[ext_resource type="Texture2D" uid="uid://bq0u1ww7kkx16" path="res://src/Characters/Max/max_hammer.png" id="1_rn8o5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f2yoa"]
+atlas = ExtResource("1_rn8o5")
+region = Rect2(32, 0, 32, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ls4i"]
+atlas = ExtResource("1_rn8o5")
+region = Rect2(0, 0, 32, 160)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f2yoa")
+}],
+"loop": true,
+"name": &"engage",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ls4i")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
