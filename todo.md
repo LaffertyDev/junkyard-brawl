@@ -7,8 +7,8 @@ Build Todolist
 [x] Choose Pixel Scale
 [x] Decide what max and freak should look like
 
-Make max move forward and backwards
-Make max move side to side
+[x] Make max move forward and backwards
+[x] Make max move side to side
 Make max rotate
 Make max attack
 

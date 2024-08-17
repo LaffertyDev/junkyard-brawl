@@ -46,9 +46,10 @@ position = Vector2(28, -28)
 texture = ExtResource("3_68rjg")
 
 [node name="max_torso" type="Sprite2D" parent="."]
+unique_name_in_owner = true
 texture = ExtResource("2_u1ccp")
 
-[node name="max_hammer" type="Sprite2D" parent="."]
+[node name="max_hammer" type="Sprite2D" parent="max_torso"]
 position = Vector2(-29, -41)
 texture = ExtResource("4_7digu")
 
