@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://btutvf1fatmwy"]
+
+[ext_resource type="PackedScene" uid="uid://8d0tvl7vuu6" path="res://src/Arena.tscn" id="1_len5e"]
+[ext_resource type="PackedScene" uid="uid://c7rfvjpqsmeb8" path="res://src/Characters/Max/max.tscn" id="1_x8fa0"]
+[ext_resource type="PackedScene" uid="uid://bog6h6vlxchda" path="res://src/Characters/freek.tscn" id="2_px2hi"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Arena" parent="." instance=ExtResource("1_len5e")]
+
+[node name="max" parent="." instance=ExtResource("1_x8fa0")]
+position = Vector2(0, 31)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Node2D" parent="." instance=ExtResource("2_px2hi")]
+position = Vector2(50, 0)
