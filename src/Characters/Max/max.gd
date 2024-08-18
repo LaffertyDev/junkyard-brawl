@@ -13,6 +13,9 @@ class_name Max extends CharacterBody2D
 @onready var _torso: Node2D = %max_torso
 @onready var _hammer: AnimatedSprite2D = %max_hammer
 
+func _ready() -> void:
+	add_to_group("max")
+
 func _physics_process(delta: float) -> void:
 	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:
 		var target_angle = get_global_mouse_position().angle_to_point(self.position) - (PI / 2)
@@ -23,3 +26,10 @@ func _physics_process(delta: float) -> void:
 			_hammer.animation = "engage"
 		else:
 			_hammer.animation = "idle"
+
+
+func _on_freek_enter_radius_body_entered(_body: Node2D) -> void:
+	PlayerState.is_freek_near_max = true
+
+func _on_freek_enter_radius_body_exited(_body: Node2D) -> void:
+	PlayerState.is_freek_near_max = false

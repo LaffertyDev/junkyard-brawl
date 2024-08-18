@@ -11,3 +11,6 @@ func update(_delta: float) -> void:
 func exit():
 	freek_player.show()
 	freek_player._freek_camera.enabled = true
+	var max_node = get_tree().get_nodes_in_group("max")[0]
+	freek_player.position = max_node.position
+	freek_player.position.y += 35

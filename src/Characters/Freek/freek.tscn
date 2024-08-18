@@ -12,6 +12,7 @@ radius = 6.0
 height = 18.0
 
 [node name="Freek" type="CharacterBody2D"]
+collision_layer = 32769
 script = ExtResource("1_r4tme")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

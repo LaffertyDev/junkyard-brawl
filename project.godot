@@ -55,6 +55,10 @@ action_primary={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_16="Freek_Interaction_Area"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

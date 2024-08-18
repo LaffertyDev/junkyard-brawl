@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c7rfvjpqsmeb8"]
+[gd_scene load_steps=14 format=3 uid="uid://c7rfvjpqsmeb8"]
 
 [ext_resource type="Script" path="res://src/Characters/Max/max.gd" id="1_enr7n"]
 [ext_resource type="Texture2D" uid="uid://brcocx6q6doft" path="res://src/Characters/Max/max_torso.png" id="2_u1ccp"]
@@ -16,6 +16,9 @@ radius = 32.0
 height = 100.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rl2ex"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5j42g"]
+radius = 90.0
 
 [node name="max" type="CharacterBody2D"]
 script = ExtResource("1_enr7n")
@@ -77,3 +80,13 @@ script = ExtResource("10_f18k6")
 
 [node name="MaxCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
+
+[node name="FreekEnterRadius" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FreekEnterRadius"]
+shape = SubResource("CircleShape2D_5j42g")
+
+[connection signal="body_entered" from="FreekEnterRadius" to="." method="_on_freek_enter_radius_body_entered"]
+[connection signal="body_exited" from="FreekEnterRadius" to="." method="_on_freek_enter_radius_body_exited"]

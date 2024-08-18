@@ -1,4 +1,4 @@
-extends Control
+class_name HUD extends Control
 
 @onready var _eject_button: Button = %ButtonEject
 @onready var _margin_container: MarginContainer = %GuiPanelMargin
@@ -11,10 +11,18 @@ var ui_tween: Tween
 func _ready() -> void:
 	pass # Replace with function body.
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	pass
+	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:
+		_eject_button.disabled = false
+		print("Show")
+		_eject_button.show()
+	if PlayerState.current_pilot_state == Enums.PilotState.Ejected:
+		if PlayerState.is_freek_near_max:
+			_eject_button.disabled = false
+			_eject_button.show()
+		else:
+			_eject_button.disabled = true
+			_eject_button.hide()
 
 func _on_button_eject_pressed() -> void:
 	if PlayerState.current_pilot_state == Enums.PilotState.Ejected:
