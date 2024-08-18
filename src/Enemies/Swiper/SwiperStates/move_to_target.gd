@@ -5,6 +5,11 @@ var target: Node2D
 func enter(_previous_state_path: String, data := {}) -> void:
 	target = data.target
 
+
+func update(_delta: float) -> void:
+	if swiper_instance.current_health <= 0:
+		finished.emit(DIE)
+
 func physics_update(delta: float) -> void:
 	# rotate the sprite to always face target
 	var angle_to = swiper_instance.position.angle_to_point(target.position)

@@ -12,6 +12,7 @@ class_name Max extends CharacterBody2D
 @onready var _max_camera: Camera2D = %MaxCamera
 @onready var _torso: Node2D = %max_torso
 @onready var _hammer: AnimatedSprite2D = %max_hammer
+@onready var _hammer_attack_damage_scan_area: Area2D = %AttackDamageScanArea
 
 
 
@@ -26,6 +27,9 @@ func _physics_process(delta: float) -> void:
 
 		if Input.is_action_pressed("action_primary"):
 			_hammer.animation = "engage"
+			var areas_hit = _hammer_attack_damage_scan_area.get_overlapping_areas()
+			for area in areas_hit:
+				area.take_damage(1)
 		else:
 			_hammer.animation = "idle"
 

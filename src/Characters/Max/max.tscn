@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://c7rfvjpqsmeb8"]
+[gd_scene load_steps=15 format=3 uid="uid://c7rfvjpqsmeb8"]
 
 [ext_resource type="Script" path="res://src/Characters/Max/max.gd" id="1_enr7n"]
 [ext_resource type="Texture2D" uid="uid://brcocx6q6doft" path="res://src/Characters/Max/max_torso.png" id="2_u1ccp"]
@@ -16,6 +16,9 @@ radius = 32.0
 height = 100.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rl2ex"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hwxcy"]
+size = Vector2(32, 65)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5j42g"]
 radius = 90.0
@@ -59,7 +62,16 @@ texture = ExtResource("2_u1ccp")
 unique_name_in_owner = true
 position = Vector2(-29, -41)
 sprite_frames = ExtResource("5_wybb3")
-animation = &"idle"
+animation = &"engage"
+
+[node name="AttackDamageScanArea" type="Area2D" parent="max_torso/max_hammer"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2048
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="max_torso/max_hammer/AttackDamageScanArea"]
+position = Vector2(0, -21.5)
+shape = SubResource("RectangleShape2D_hwxcy")
 
 [node name="MovementState" type="Node" parent="."]
 script = ExtResource("6_qciws")

@@ -29,18 +29,18 @@ Build Todolist
 
 [Sun x] Add basic large enemy
 [Sun x] Make basic large enemy follow closest person
-[] Make basic attack do damage and chip away health bar
+[Sun x] Make enemy basic attack do damage and chip away health bar
+[Sun x] Add health bar for Max and wire it up
+[Sun x] Add health bar for Freek and wire it up
+[Sun x] Make max attack actually do damage
 
-Make the large enemy chase someone
 Add spawn for basic large enemy
 
-Add health bar for Max and wire it up
-Add health bar for Freek and wire it up
 
 Add pickup for health for Max
 Add pickup for Energy for Max
 
-Add defeat screen
+Add defeat screen for when max or freek take damage and decide how defeat and victory work
 
 
 Add a kill counter for number of enemies

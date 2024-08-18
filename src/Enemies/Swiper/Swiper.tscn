@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://k3pncah0uhq7"]
+[gd_scene load_steps=11 format=3 uid="uid://k3pncah0uhq7"]
 
 [ext_resource type="Script" path="res://src/Enemies/Swiper/swiper.gd" id="1_fjl12"]
 [ext_resource type="SpriteFrames" uid="uid://csqseuu7m6e20" path="res://src/Enemies/Swiper/swiper_sprite_frames.tres" id="1_m0lsv"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://q5uy2xebe2y0" path="res://src/Enemies/Swiper/SwiperStates/FindTarget.tscn" id="5_k5pwq"]
 [ext_resource type="PackedScene" uid="uid://coxcp8uh5muts" path="res://src/Enemies/Swiper/SwiperStates/MoveToTarget.tscn" id="6_job8q"]
 [ext_resource type="PackedScene" uid="uid://cxa4h4eq4kyxg" path="res://src/Enemies/Swiper/SwiperStates/Attack.tscn" id="7_x4qls"]
+[ext_resource type="PackedScene" uid="uid://d2x4g07lt17fu" path="res://src/Enemies/Swiper/SwiperStates/Die.tscn" id="8_i8dkn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eglyf"]
 radius = 15.1327
@@ -15,6 +16,8 @@ radius = 15.1327
 radius = 310.232
 
 [node name="Swiper" type="Area2D"]
+collision_layer = 2048
+collision_mask = 0
 script = ExtResource("1_fjl12")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -42,3 +45,5 @@ script = ExtResource("2_pj146")
 [node name="MoveToTarget" parent="StateMachine" instance=ExtResource("6_job8q")]
 
 [node name="Attack" parent="StateMachine" instance=ExtResource("7_x4qls")]
+
+[node name="Die" parent="StateMachine" instance=ExtResource("8_i8dkn")]
