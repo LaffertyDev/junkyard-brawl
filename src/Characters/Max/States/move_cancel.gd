@@ -21,5 +21,9 @@ func physics_update(_delta: float):
 func handle_animation_complete():
 	finished.emit(MOVE_IDLE)
 
+func handle_receive_message(message: String, _data: Dictionary = {}) -> void:
+	if message == "Die":
+		finished.emit(MOVE_DIE)
+
 func exit():
 	anim_tween.kill()

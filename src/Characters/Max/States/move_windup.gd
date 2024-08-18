@@ -35,5 +35,9 @@ func update_animation(duration: float, distance_to_move: Vector2) -> void:
 func handle_animation_complete():
 	finished.emit(MOVE_COMMIT, { "movement_direction": movement_direction })
 
+func handle_receive_message(message: String, _data: Dictionary = {}) -> void:
+	if message == "Die":
+		finished.emit(MOVE_DIE)
+
 func exit():
 	anim_tween.kill()

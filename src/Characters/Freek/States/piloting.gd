@@ -8,6 +8,10 @@ func update(_delta: float) -> void:
 	if PlayerState.current_pilot_state == Enums.PilotState.Ejected:
 		finished.emit(IDLE)
 
+func handle_receive_message(message: String, _data: Dictionary = {}) -> void:
+	if message == "Die":
+		finished.emit(DIE)
+		
 func exit():
 	freek_player.show()
 	freek_player._freek_camera.enabled = true

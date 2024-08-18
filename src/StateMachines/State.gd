@@ -25,6 +25,9 @@ func physics_update(_delta: float) -> void:
 func enter(_previous_state_path: String, _data := {}) -> void:
 	pass
 
+func handle_receive_message(_message: String, _data: Dictionary = {}) -> void:
+	pass
+
 ## Called by the state machine before changing the active state. Use this function
 ## to clean up the state.
 func exit() -> void:

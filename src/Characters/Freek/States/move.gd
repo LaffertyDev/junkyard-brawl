@@ -27,3 +27,7 @@ func physics_update(_delta: float) -> void:
 	freek_player.velocity = speed
 	freek_player.move_and_slide()
 	freek_player._freek_sprites.rotation = rotations[input_direction_x + 1][input_direction_y + 1] + PI / 2
+
+func handle_receive_message(message: String, _data: Dictionary = {}) -> void:
+	if message == "Die":
+		finished.emit(DIE)

@@ -1,5 +1,6 @@
 class_name FreekState extends State
 
+const DIE = "Die"
 const IDLE = "Idle"
 const MOVE = "Move"
 const PILOTING = "Piloting"

@@ -22,7 +22,10 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	state.physics_update(delta)
-
+	
+func send_message_to_state(message: String, data: Dictionary = {}) -> void:
+	state.handle_receive_message(message, data)
+	
 func _transition_to_next_state(target_state_path: String, data: Dictionary = {}) -> void:
 	if not has_node(target_state_path):
 		printerr(owner.name + ": Trying to transition to state " + target_state_path + " but it does not exist.")

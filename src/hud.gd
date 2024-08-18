@@ -6,18 +6,19 @@ class_name HUD extends Control
 @onready var _right_pillarbox: Panel = %Right_Pillarbox
 @onready var _max_health: ProgressBar = %Max_Health
 @onready var _freek_health: ProgressBar = %Freek_Health
+@onready var _pause_panel: Panel = %pause_panel
 
 var ui_tween: Tween
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
 func _process(_delta: float) -> void:
 	_max_health.max_value = PlayerState.max_maximum_health
 	_max_health.value = PlayerState.max_current_health
 	_freek_health.max_value = PlayerState.freek_maximum_health
 	_freek_health.value = PlayerState.freek_current_health
+	
+	if Input.is_action_just_pressed("pause_game"):
+		get_tree().paused = true
+		_pause_panel.show()
 
 	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:
 		_eject_button.disabled = false
@@ -35,13 +36,11 @@ func _on_button_eject_pressed() -> void:
 		_eject_button.text = "Eject"
 		PlayerState.SetPilotState(Enums.PilotState.Piloting)
 		animate_scene_swap(false)
-		
 
 	elif PlayerState.current_pilot_state == Enums.PilotState.Piloting:
 		_eject_button.text = "Pilot"
 		PlayerState.SetPilotState(Enums.PilotState.Ejected)
 		animate_scene_swap(true)
-		
 
 func animate_scene_swap(show_ui: bool) -> void:
 	if ui_tween:
@@ -65,3 +64,7 @@ func set_margin_left(val):
 
 func set_margin_right(val):
 	_margin_container.add_theme_constant_override("margin_right", val)
+
+func _on_unpause_pressed() -> void:
+	_pause_panel.hide()
+	get_tree().paused = false

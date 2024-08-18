@@ -1,1 +1,4 @@
-extends Node2D
+class_name GameScene extends Node2D
+
+func _ready() -> void:
+	PlayerState.Initialize()

@@ -1,10 +1,11 @@
 class_name MechMovementState extends State
 
-const MOVE_IDLE = "Move_Idle"
-const MOVE_WINDUP = "Move_Windup"
 const MOVE_CANCEL = "Move_Cancel"
 const MOVE_COMMIT = "Move_Commit"
+const MOVE_DIE = "Move_Die"
+const MOVE_IDLE = "Move_Idle"
 const MOVE_UNPOWERED = "Move_Unpowered"
+const MOVE_WINDUP = "Move_Windup"
 
 # how far a leg will attempt to move
 const LEG_MOVEMENT_SPEED: int = 32

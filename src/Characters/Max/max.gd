@@ -36,10 +36,11 @@ func _physics_process(delta: float) -> void:
 func take_damage(damage: int) -> void:
 	PlayerState.max_current_health -= damage
 	if PlayerState.max_current_health <= 0:
-		print("Game Over! TODO: Die!")
+		%MovementState.send_message_to_state("Die")
 
 func _on_freek_enter_radius_body_entered(_body: Node2D) -> void:
-	PlayerState.is_freek_near_max = true
+	if PlayerState.max_current_health > 0:
+		PlayerState.is_freek_near_max = true
 
 func _on_freek_enter_radius_body_exited(_body: Node2D) -> void:
 	PlayerState.is_freek_near_max = false

@@ -13,3 +13,7 @@ func physics_update(_delta: float) -> void:
 	 or Input.is_action_pressed("move_left") \
 	 or Input.is_action_pressed("move_right")):
 		finished.emit(MOVE)
+
+func handle_receive_message(message: String, _data: Dictionary = {}) -> void:
+	if message == "Die":
+		finished.emit(DIE)

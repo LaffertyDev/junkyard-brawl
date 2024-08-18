@@ -12,4 +12,4 @@ func _ready() -> void:
 func take_damage(damage: int) -> void:
 	PlayerState.freek_current_health -= damage
 	if PlayerState.freek_current_health <= 0:
-		print("Game Over! TODO: Die!")
+		%StateMachine.send_message_to_state("Die")

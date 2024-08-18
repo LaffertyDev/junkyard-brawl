@@ -34,19 +34,22 @@ Build Todolist
 [Sun x] Add health bar for Freek and wire it up
 [Sun x] Make max attack actually do damage
 
-Add spawn for basic large enemy
+[Sun x] Add spawn for basic large enemy
 
+[Sun x] Add defeat screen for when max or freek take damage and decide how defeat and victory work
 
-Add pickup for health for Max
-Add pickup for Energy for Max
+[Sun x] Add pause menu
+[Sun x] Add main menu scene
 
-Add defeat screen for when max or freek take damage and decide how defeat and victory work
+Make Freek Useful:
+* Add pickup for health for Max
+* Add pickup for Energy for Max
+* ???
+
 
 
 Add a kill counter for number of enemies
 
-Add main menu scene
-Add pause menu
 Add automated build to web
 
 ## UX Improvements
