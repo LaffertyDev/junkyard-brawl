@@ -4,7 +4,7 @@ const IDLE = "Idle"
 const MOVE = "Move"
 const PILOTING = "Piloting"
 
-const FREEK_MOVE_SPEED = 150
+const FREEK_MOVE_SPEED = 200
 
 var freek_player: Freek
 

@@ -22,10 +22,8 @@ Build Todolist
 [Sat x] Enable Freek to board max
 [Sat x] Enable Freek to eject from Max
 
-THOUGHT FOR TOMORROW. You struggled with the State transitions. `Boarding` / `Boarded` don't propogate evenly. i.e. `Max` changed the state and so `Freek` couldn't see it. Thats a problem. You couldn't think about a solution because it was midnight.
-
-Make camera blur out into a pillarbox mode when in Freek
-Make camera follow Freek or max, whoever is active
+[Sun x] Make camera blur out into a pillarbox mode when in Freek
+[Sun x]Make camera follow Freek or max, whoever is active
 Make it so you can only enter Max if you are near him
 Make it so when Freek ejects he is placed near the mech
 
@@ -48,6 +46,13 @@ Add a kill counter for number of enemies
 Add main menu scene
 Add pause menu
 Add automated build to web
+
+## UX Improvements
+
+* Camera should _lead_ Freek
+* Camera on Max should lead him so he's looking ahead, not center
+
+
 
 
 ## ASSETS

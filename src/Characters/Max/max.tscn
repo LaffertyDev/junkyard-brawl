@@ -74,3 +74,6 @@ script = ExtResource("10_bmamo")
 
 [node name="Move_Unpowered" type="Node" parent="MovementState"]
 script = ExtResource("10_f18k6")
+
+[node name="MaxCamera" type="Camera2D" parent="."]
+unique_name_in_owner = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://tr3eddb5yvvm"]
+[gd_scene load_steps=4 format=3 uid="uid://tr3eddb5yvvm"]
 
 [ext_resource type="Script" path="res://src/hud.gd" id="1_a40xm"]
 [ext_resource type="Texture2D" uid="uid://cqru1roa5q72x" path="res://src/icon.svg" id="1_sw2bd"]
+[ext_resource type="Theme" uid="uid://c3xglhnien5t5" path="res://src/UI/hud_theme.tres" id="2_ck4kv"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -12,7 +13,28 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a40xm")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Left_Pillarbox" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+grow_vertical = 2
+theme = ExtResource("2_ck4kv")
+
+[node name="Right_Pillarbox" type="Panel" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+scale = Vector2(-1, 1)
+theme = ExtResource("2_ck4kv")
+
+[node name="GuiPanelMargin" type="MarginContainer" parent="."]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -24,15 +46,15 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="GuiPanelMargin"]
 layout_mode = 2
 size_flags_vertical = 0
 
-[node name="Control" type="Control" parent="MarginContainer/HBoxContainer"]
+[node name="Control" type="Control" parent="GuiPanelMargin/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GuiPanelMargin/HBoxContainer/Control"]
 layout_mode = 2
 offset_left = 4.0
 offset_right = 170.0
@@ -40,50 +62,50 @@ offset_bottom = 58.0
 size_flags_horizontal = 2
 size_flags_vertical = 0
 
-[node name="MaxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Control/VBoxContainer"]
+[node name="MaxContainer" type="HBoxContainer" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer"]
 layout_mode = 2
 
-[node name="MaxIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/Control/VBoxContainer/MaxContainer"]
-layout_mode = 2
-texture = ExtResource("1_sw2bd")
-expand_mode = 3
-
-[node name="Max_Health" type="ProgressBar" parent="MarginContainer/HBoxContainer/Control/VBoxContainer/MaxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-value = 100.0
-
-[node name="FreekContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/Control/VBoxContainer"]
-layout_mode = 2
-
-[node name="Freekicon" type="TextureRect" parent="MarginContainer/HBoxContainer/Control/VBoxContainer/FreekContainer"]
+[node name="MaxIcon" type="TextureRect" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/MaxContainer"]
 layout_mode = 2
 texture = ExtResource("1_sw2bd")
 expand_mode = 3
 
-[node name="Freek_Health" type="ProgressBar" parent="MarginContainer/HBoxContainer/Control/VBoxContainer/FreekContainer"]
+[node name="Max_Health" type="ProgressBar" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/MaxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 value = 100.0
 
-[node name="LabelArea" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="FreekContainer" type="HBoxContainer" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Freekicon" type="TextureRect" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/FreekContainer"]
+layout_mode = 2
+texture = ExtResource("1_sw2bd")
+expand_mode = 3
+
+[node name="Freek_Health" type="ProgressBar" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/FreekContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+value = 100.0
+
+[node name="LabelArea" type="Label" parent="GuiPanelMargin/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Junkyard"
 horizontal_alignment = 1
 
-[node name="LabelScore" type="Label" parent="MarginContainer/HBoxContainer"]
+[node name="LabelScore" type="Label" parent="GuiPanelMargin/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
 text = "Wave: 9000"
 horizontal_alignment = 2
 
-[node name="Control" type="Control" parent="MarginContainer"]
+[node name="Control" type="Control" parent="GuiPanelMargin"]
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Control"]
+[node name="MarginContainer" type="MarginContainer" parent="GuiPanelMargin/Control"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -96,14 +118,14 @@ theme_override_constants/margin_left = 80
 theme_override_constants/margin_right = 80
 theme_override_constants/margin_bottom = 40
 
-[node name="ProgressBar" type="ProgressBar" parent="MarginContainer/Control/MarginContainer"]
+[node name="ProgressBar" type="ProgressBar" parent="GuiPanelMargin/Control/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
 
-[node name="Control2" type="Control" parent="MarginContainer"]
+[node name="Control2" type="Control" parent="GuiPanelMargin"]
 layout_mode = 2
 
-[node name="ButtonEject" type="Button" parent="MarginContainer/Control2"]
+[node name="ButtonEject" type="Button" parent="GuiPanelMargin/Control2"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 3
@@ -119,4 +141,9 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 text = "Eject"
 
-[connection signal="pressed" from="MarginContainer/Control2/ButtonEject" to="." method="_on_button_eject_pressed"]
+[node name="BoxContainer" type="BoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="GuiPanelMargin/Control2/ButtonEject" to="." method="_on_button_eject_pressed"]

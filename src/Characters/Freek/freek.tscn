@@ -12,7 +12,6 @@ radius = 6.0
 height = 18.0
 
 [node name="Freek" type="CharacterBody2D"]
-visible = false
 script = ExtResource("1_r4tme")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -35,3 +34,14 @@ script = ExtResource("4_66ghv")
 
 [node name="Move" type="Node" parent="Node"]
 script = ExtResource("5_t3prf")
+
+[node name="FreekCamera" type="Camera2D" parent="."]
+unique_name_in_owner = true
+enabled = false
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.15
+drag_right_margin = 0.1
+drag_bottom_margin = 0.15

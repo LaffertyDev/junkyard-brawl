@@ -8,6 +8,8 @@ class_name Max extends CharacterBody2D
 @onready var _leg_top_left: Node2D = %leg_top_left
 @warning_ignore("unused_private_class_variable")
 @onready var _leg_top_right: Node2D = %leg_top_right
+@warning_ignore("unused_private_class_variable")
+@onready var _max_camera: Camera2D = %MaxCamera
 @onready var _torso: Node2D = %max_torso
 @onready var _hammer: AnimatedSprite2D = %max_hammer
 
