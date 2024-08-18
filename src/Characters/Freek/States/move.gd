@@ -9,6 +9,10 @@ const rotations = [ \
 func enter(_previous_state_path: String, _data := {}) -> void:
 	freek_player._freek_sprites.animation = "move"
 
+func update(_delta: float) -> void:
+	if PlayerState.current_pilot_state == Enums.PilotState.Boarded:
+		finished.emit(PILOTING)
+
 func physics_update(_delta: float) -> void:
 	if (not Input.is_action_pressed("move_forward") \
 	 and not Input.is_action_pressed("move_backward") \

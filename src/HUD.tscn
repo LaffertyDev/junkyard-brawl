@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://tr3eddb5yvvm"]
 
 [ext_resource type="Script" path="res://src/hud.gd" id="1_a40xm"]
-[ext_resource type="Texture2D" uid="uid://cqru1roa5q72x" path="res://icon.svg" id="1_sw2bd"]
+[ext_resource type="Texture2D" uid="uid://cqru1roa5q72x" path="res://src/icon.svg" id="1_sw2bd"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -80,12 +80,6 @@ size_flags_vertical = 1
 text = "Wave: 9000"
 horizontal_alignment = 2
 
-[node name="ButtonEject" type="Button" parent="MarginContainer"]
-layout_mode = 2
-size_flags_horizontal = 8
-size_flags_vertical = 8
-text = "Eject"
-
 [node name="Control" type="Control" parent="MarginContainer"]
 layout_mode = 2
 
@@ -106,4 +100,23 @@ theme_override_constants/margin_bottom = 40
 layout_mode = 2
 size_flags_vertical = 8
 
-[connection signal="pressed" from="MarginContainer/ButtonEject" to="." method="_on_button_eject_pressed"]
+[node name="Control2" type="Control" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="ButtonEject" type="Button" parent="MarginContainer/Control2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "Eject"
+
+[connection signal="pressed" from="MarginContainer/Control2/ButtonEject" to="." method="_on_button_eject_pressed"]

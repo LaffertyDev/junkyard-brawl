@@ -2,6 +2,7 @@ class_name FreekState extends State
 
 const IDLE = "Idle"
 const MOVE = "Move"
+const PILOTING = "Piloting"
 
 const FREEK_MOVE_SPEED = 150
 

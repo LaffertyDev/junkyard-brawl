@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7rfvjpqsmeb8"]
+[gd_scene load_steps=13 format=3 uid="uid://c7rfvjpqsmeb8"]
 
 [ext_resource type="Script" path="res://src/Characters/Max/max.gd" id="1_enr7n"]
 [ext_resource type="Texture2D" uid="uid://brcocx6q6doft" path="res://src/Characters/Max/max_torso.png" id="2_u1ccp"]
@@ -9,13 +9,13 @@
 [ext_resource type="Script" path="res://src/Characters/Max/States/move_cancel.gd" id="8_1ekhc"]
 [ext_resource type="Script" path="res://src/Characters/Max/States/move_commit.gd" id="9_ser34"]
 [ext_resource type="Script" path="res://src/Characters/Max/States/move_windup.gd" id="10_bmamo"]
+[ext_resource type="Script" path="res://src/Characters/Max/States/move_unpowered.gd" id="10_f18k6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gbgva"]
 radius = 32.0
 height = 100.0
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rl2ex"]
-load_path = "res://.godot/imported/max3.png-e5c4fe40ec76e9f31a639774e6581b74.ctex"
 
 [node name="max" type="CharacterBody2D"]
 script = ExtResource("1_enr7n")
@@ -71,3 +71,6 @@ script = ExtResource("9_ser34")
 
 [node name="Move_Windup" type="Node" parent="MovementState"]
 script = ExtResource("10_bmamo")
+
+[node name="Move_Unpowered" type="Node" parent="MovementState"]
+script = ExtResource("10_f18k6")

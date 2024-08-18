@@ -1,16 +1,18 @@
-[gd_scene load_steps=7 format=3 uid="uid://bog6h6vlxchda"]
+[gd_scene load_steps=8 format=3 uid="uid://bog6h6vlxchda"]
 
 [ext_resource type="Script" path="res://src/Characters/Freek/freek.gd" id="1_r4tme"]
 [ext_resource type="SpriteFrames" uid="uid://kijdvek67r3" path="res://src/Characters/Freek/freek_sprites.tres" id="2_07p1d"]
 [ext_resource type="Script" path="res://src/StateMachines/StateMachine.gd" id="3_iegyp"]
 [ext_resource type="Script" path="res://src/Characters/Freek/States/idle.gd" id="4_66ghv"]
 [ext_resource type="Script" path="res://src/Characters/Freek/States/move.gd" id="5_t3prf"]
+[ext_resource type="Script" path="res://src/Characters/Freek/States/piloting.gd" id="6_10qjl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vpejk"]
 radius = 6.0
 height = 18.0
 
 [node name="Freek" type="CharacterBody2D"]
+visible = false
 script = ExtResource("1_r4tme")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -24,6 +26,9 @@ autoplay = "idle"
 
 [node name="Node" type="Node" parent="."]
 script = ExtResource("3_iegyp")
+
+[node name="Piloting" type="Node" parent="Node"]
+script = ExtResource("6_10qjl")
 
 [node name="Idle" type="Node" parent="Node"]
 script = ExtResource("4_66ghv")

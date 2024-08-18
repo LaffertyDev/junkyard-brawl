@@ -8,15 +8,10 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	
 	await get_tree().create_timer(0.05).timeout
 	
-	if Input.is_action_pressed("move_forward"):
-		movement_direction.y = -1
-	elif Input.is_action_pressed("move_backward"):
-		movement_direction.y = 1
-	if Input.is_action_pressed("move_right"):
-		movement_direction.x = 1
-	elif Input.is_action_pressed("move_left"):
-		movement_direction.x = -1
-		
+	var input_direction_x := Input.get_axis("move_left", "move_right")
+	var input_direction_y := Input.get_axis("move_forward", "move_backward")
+	
+	movement_direction = Vector2(input_direction_x, input_direction_y)
 	var distance = movement_direction.normalized() * LEG_MOVEMENT_SPEED
 	
 	update_animation(1.0, distance)

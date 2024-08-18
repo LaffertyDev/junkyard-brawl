@@ -43,6 +43,15 @@ How do they chase the player?
 	* Sees a 16:9 visual
 * 64x64 (VERY APPROPRIATE)
 
+How does Max move?
+
+* He's a mech. He has a slow wind up, then a lurch forward.
+* Quadroped, so two feet move at the same time
+* Holding a direction will move the two proper feet in that direction
+* if a user stops holding W before they finish their movement animation, the feet return and max does not move forward
+* if the feet finish their animation, the other two feet will start their animation
+* max's torso will then move forward. This is uncancellable
+
 ### FREAK
 
 * More cute than machine
@@ -54,6 +63,13 @@ How do they chase the player?
 	* 
 
 * 32x32 pixels roughly (maybe a little large visually?)
+
+### MAX + FREAK
+
+How do I implement the boarding mechanic?
+
+* Added State on everything ("Unpowered"). On `MechMovement`, `MechWeapon`
+* Added State on Freek (`Piloting` / `Idle` / `Moving` / `Boarding` etc.) <-- this one makes sense
 
 ## UI
 
