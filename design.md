@@ -11,6 +11,10 @@
 * Simple background
 * Simple tiles
 
+## Colour Palette
+
+* https://www.inquirer.com/resizer/YmSf7Tno53k6Zy7PEQwjyLkpAGs=/760x507/smart/filters:format(webp)/arc-anglerfish-arc2-prod-pmn.s3.amazonaws.com/public/5XQ3LMMGUBHPROYKY4RRT33HQU.jpg
+
 ## Camera Design
 
 * When in Max, camera zooms out
@@ -68,8 +72,13 @@ How does Max move?
 
 How do I implement the boarding mechanic?
 
-* Added State on everything ("Unpowered"). On `MechMovement`, `MechWeapon`
+* Added State on Max ("Unpowered"). On `MechMovement`, `MechWeapon`
 * Added State on Freek (`Piloting` / `Idle` / `Moving` / `Boarding` etc.) <-- this one makes sense
+
+* New "meta-state"
+	* "MechState"
+		* Powered -> enable movement processing
+		* Unpowered -> disable movement
 
 ## UI
 

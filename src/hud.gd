@@ -14,8 +14,8 @@ func _process(_delta: float) -> void:
 func _on_button_eject_pressed() -> void:
 	if PlayerState.current_pilot_state == Enums.PilotState.Ejected:
 		_eject_button.text = "Eject"
-		PlayerState.SetPilotState(Enums.PilotState.BoardRequested)
-	elif PlayerState.current_pilot_state == Enums.PilotState.Boarded:
+		PlayerState.SetPilotState(Enums.PilotState.Piloting)
+	elif PlayerState.current_pilot_state == Enums.PilotState.Piloting:
 		_eject_button.text = "Pilot"
-		PlayerState.SetPilotState(Enums.PilotState.EjectRequested)
+		PlayerState.SetPilotState(Enums.PilotState.Ejected)
 		

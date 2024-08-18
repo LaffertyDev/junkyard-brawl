@@ -21,6 +21,9 @@ Build Todolist
 [Sat x] Add eject/board button
 [Sat x] Enable Freek to board max
 [Sat x] Enable Freek to eject from Max
+
+THOUGHT FOR TOMORROW. You struggled with the State transitions. `Boarding` / `Boarded` don't propogate evenly. i.e. `Max` changed the state and so `Freek` couldn't see it. Thats a problem. You couldn't think about a solution because it was midnight.
+
 Make camera blur out into a pillarbox mode when in Freek
 Make camera follow Freek or max, whoever is active
 Make it so you can only enter Max if you are near him

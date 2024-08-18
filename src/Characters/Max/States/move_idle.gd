@@ -11,7 +11,7 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	anim_tween.tween_property(max_player._leg_top_right, "position", Vector2(28, -28), 1).from_current()
 
 func update(_delta: float) -> void:
-	if PlayerState.current_pilot_state == Enums.PilotState.EjectRequested:
+	if PlayerState.current_pilot_state == Enums.PilotState.Ejected:
 		finished.emit(MOVE_UNPOWERED)
 
 func physics_update(_delta: float) -> void:

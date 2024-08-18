@@ -12,7 +12,7 @@ class_name Max extends CharacterBody2D
 @onready var _hammer: AnimatedSprite2D = %max_hammer
 
 func _physics_process(delta: float) -> void:
-	if PlayerState.current_pilot_state == Enums.PilotState.Boarded:
+	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:
 		var target_angle = get_global_mouse_position().angle_to_point(self.position) - (PI / 2)
 
 		_torso.rotation = lerp_angle(_torso.rotation, target_angle, 1.0 * delta)

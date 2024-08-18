@@ -10,7 +10,7 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	freek_player._freek_sprites.animation = "move"
 
 func update(_delta: float) -> void:
-	if PlayerState.current_pilot_state == Enums.PilotState.Boarded:
+	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:
 		finished.emit(PILOTING)
 
 func physics_update(_delta: float) -> void:
