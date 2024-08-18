@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_action_pressed("action_primary"):
 		_hammer.animation = "engage"
-		_hammer.play()
+		#_hammer.play()
 	else:
 		_hammer.animation = "idle"
-		_hammer.play()
+		#_hammer.play()

@@ -12,17 +12,18 @@ Build Todolist
 [x] Make max rotate
 [x] Make max attack
 
-Make Freak move forward and backwards
-Make Freak move side to side
+Make Freek move forward and backwards
+Make Freek move side to side
 
-Add eject/join button
-Enable Freak to board max
-Enable Freak to eject from Max
+Add eject/board button
+Enable Freek to board max
+Enable Freek to eject from Max
+Make camera blur out into a pillarbox mode when in Freek
 
 Add health bar for Max and wire it up
 Add health bar for Freek and wire it up
 
-Make camera follow Freak or max, whoever is active
+Make camera follow Freek or max, whoever is active
 
 Add pickup for health for Max
 Add pickup for Energy for Max
@@ -43,4 +44,4 @@ Add automated build to web
 ## ASSETS
 
 Add Max movement ani
-Add Freak movement animation
+Add Freek movement animation

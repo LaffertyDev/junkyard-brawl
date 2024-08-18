@@ -17,9 +17,7 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	elif Input.is_action_pressed("move_left"):
 		movement_direction.x = -1
 		
-	var distance = movement_direction * LEG_MOVEMENT_SPEED
-	if distance.abs().length() > (LEG_MOVEMENT_SPEED + 1):
-		distance = distance * 0.65
+	var distance = movement_direction.normalized() * LEG_MOVEMENT_SPEED
 	
 	update_animation(1.0, distance)
 

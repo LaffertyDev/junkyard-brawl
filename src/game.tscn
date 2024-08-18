@@ -1,17 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://btutvf1fatmwy"]
+[gd_scene load_steps=5 format=3 uid="uid://btutvf1fatmwy"]
 
 [ext_resource type="PackedScene" uid="uid://8d0tvl7vuu6" path="res://src/Arena.tscn" id="1_len5e"]
-[ext_resource type="PackedScene" uid="uid://c7rfvjpqsmeb8" path="res://src/Characters/Max/max.tscn" id="1_x8fa0"]
-[ext_resource type="PackedScene" uid="uid://bog6h6vlxchda" path="res://src/Characters/freek.tscn" id="2_px2hi"]
+[ext_resource type="PackedScene" uid="uid://bog6h6vlxchda" path="res://src/Characters/Freek/freek.tscn" id="2_px2hi"]
+[ext_resource type="Script" path="res://src/camera.gd" id="3_vnnr5"]
+[ext_resource type="PackedScene" uid="uid://tr3eddb5yvvm" path="res://src/HUD.tscn" id="4_5g130"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Arena" parent="." instance=ExtResource("1_len5e")]
 
-[node name="max" parent="." instance=ExtResource("1_x8fa0")]
-position = Vector2(0, 31)
+[node name="Freek" parent="." instance=ExtResource("2_px2hi")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("3_vnnr5")
 
-[node name="Node2D" parent="." instance=ExtResource("2_px2hi")]
-position = Vector2(50, 0)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Hud" parent="CanvasLayer" instance=ExtResource("4_5g130")]

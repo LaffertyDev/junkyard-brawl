@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cft3y125r6lof"
-path="res://.godot/imported/freek3.png-feef602b0cf393055251b6d515fa5f40.ctex"
+path="res://.godot/imported/freek3.png-1341ee3a327c40bc33f1cbe50473e20b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Characters/freek3.png"
-dest_files=["res://.godot/imported/freek3.png-feef602b0cf393055251b6d515fa5f40.ctex"]
+source_file="res://src/Characters/Freek/freek3.png"
+dest_files=["res://.godot/imported/freek3.png-1341ee3a327c40bc33f1cbe50473e20b.ctex"]
 
 [params]
 

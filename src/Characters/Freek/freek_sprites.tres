@@ -1,0 +1,44 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://kijdvek67r3"]
+
+[ext_resource type="Texture2D" uid="uid://cft3y125r6lof" path="res://src/Characters/Freek/freek3.png" id="1_5x208"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwwjt"]
+atlas = ExtResource("1_5x208")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d63qr"]
+atlas = ExtResource("1_5x208")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlngr"]
+atlas = ExtResource("1_5x208")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18udi"]
+atlas = ExtResource("1_5x208")
+region = Rect2(72, 0, 24, 24)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwwjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d63qr")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlngr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18udi")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
