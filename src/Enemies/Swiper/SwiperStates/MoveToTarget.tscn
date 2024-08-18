@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://coxcp8uh5muts"]
+
+[ext_resource type="Script" path="res://src/Enemies/Swiper/SwiperStates/move_to_target.gd" id="1_11fns"]
+
+[node name="MoveToTarget" type="Node"]
+script = ExtResource("1_11fns")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://q5uy2xebe2y0"]
+
+[ext_resource type="Script" path="res://src/Enemies/Swiper/SwiperStates/find_target.gd" id="1_s83k2"]
+
+[node name="FindTarget" type="Node"]
+script = ExtResource("1_s83k2")

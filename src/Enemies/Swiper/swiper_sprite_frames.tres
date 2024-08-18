@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://csqseuu7m6e20"]
+
+[ext_resource type="Texture2D" uid="uid://cwdw0tsulxpej" path="res://src/Enemies/Swiper/mech_swiper.png" id="1_bek8a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ju1b5"]
+atlas = ExtResource("1_bek8a")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oej36"]
+atlas = ExtResource("1_bek8a")
+region = Rect2(0, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ju1b5")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oej36")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]

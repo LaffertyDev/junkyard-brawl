@@ -4,6 +4,8 @@ class_name HUD extends Control
 @onready var _margin_container: MarginContainer = %GuiPanelMargin
 @onready var _left_pillarbox: Panel = %Left_Pillarbox
 @onready var _right_pillarbox: Panel = %Right_Pillarbox
+@onready var _max_health: ProgressBar = %Max_Health
+@onready var _freek_health: ProgressBar = %Freek_Health
 
 var ui_tween: Tween
 
@@ -12,6 +14,11 @@ func _ready() -> void:
 	pass # Replace with function body.
 
 func _process(_delta: float) -> void:
+	_max_health.max_value = PlayerState.max_maximum_health
+	_max_health.value = PlayerState.max_current_health
+	_freek_health.max_value = PlayerState.freek_maximum_health
+	_freek_health.value = PlayerState.freek_current_health
+
 	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:
 		_eject_button.disabled = false
 		_eject_button.show()

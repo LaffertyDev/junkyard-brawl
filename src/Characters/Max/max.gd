@@ -13,6 +13,8 @@ class_name Max extends CharacterBody2D
 @onready var _torso: Node2D = %max_torso
 @onready var _hammer: AnimatedSprite2D = %max_hammer
 
+
+
 func _ready() -> void:
 	add_to_group("max")
 
@@ -27,6 +29,10 @@ func _physics_process(delta: float) -> void:
 		else:
 			_hammer.animation = "idle"
 
+func take_damage(damage: int) -> void:
+	PlayerState.max_current_health -= damage
+	if PlayerState.max_current_health <= 0:
+		print("Game Over! TODO: Die!")
 
 func _on_freek_enter_radius_body_entered(_body: Node2D) -> void:
 	PlayerState.is_freek_near_max = true

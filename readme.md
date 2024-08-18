@@ -40,3 +40,28 @@ https://itch.io/jam/gmtk-2024
 
 * https://eip.gg/rust/guides/junkyard-monument/
 * https://www.craiyon.com/image/TiJ52916SLakTVjgls_V7w
+* https://www.alamy.com/aerial-photograph-spent-junkyard-strothmann-auto-parts-gmbh-co-kg-car-recycling-fire-ruin-car-wrecks-schachtkuhle-unna-ruhrgebiet-north-rh-image223872716.html
+
+
+### Enemies
+
+
+#### Ranged Medium
+
+* https://www.artstation.com/artwork/b98Go
+
+
+#### Lancer Medium
+
+* https://x.com/LymphOwned/status/1413857995679805440
+	I like the idea of a mech that charges in a straight line with a wind-up.
+
+#### Sword Medium
+
+* https://worldbuilding.stackexchange.com/questions/101637/hammers-or-swords-most-effective-weapon-for-mech-melee-combat
+	Good base design. I think this is my "base" (Scroll down, the warhammer guy with a knife)
+
+#### Boss Ideas
+
+* https://pixeljoint.com/pixelart/61159.htm
+	I love the drill animation. would make a fun mech with enough wind up to get Max out of the way.

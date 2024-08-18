@@ -25,10 +25,12 @@ Build Todolist
 [Sun x] Make camera blur out into a pillarbox mode when in Freek
 [Sun x] Make camera follow Freek or max, whoever is active
 [Sun x] Make it so you can only enter Max if you are near him
-Make it so when Freek ejects he is placed near the mech
+[Sun x] Make it so when Freek ejects he is placed near the mech
 
-Add basic large enemy
-Make basic large enemy follow closest person
+[Sun x] Add basic large enemy
+[Sun x] Make basic large enemy follow closest person
+[] Make basic attack do damage and chip away health bar
+
 Make the large enemy chase someone
 Add spawn for basic large enemy
 

@@ -57,6 +57,7 @@ action_primary={
 
 [layer_names]
 
+2d_physics/layer_8="Players_To_Target"
 2d_physics/layer_16="Freek_Interaction_Area"
 
 [rendering]

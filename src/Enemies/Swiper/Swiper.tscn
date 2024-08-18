@@ -1,0 +1,44 @@
+[gd_scene load_steps=10 format=3 uid="uid://k3pncah0uhq7"]
+
+[ext_resource type="Script" path="res://src/Enemies/Swiper/swiper.gd" id="1_fjl12"]
+[ext_resource type="SpriteFrames" uid="uid://csqseuu7m6e20" path="res://src/Enemies/Swiper/swiper_sprite_frames.tres" id="1_m0lsv"]
+[ext_resource type="PackedScene" uid="uid://c1b46dapkwerm" path="res://src/Enemies/Swiper/SwiperStates/Idle.tscn" id="2_56yug"]
+[ext_resource type="Script" path="res://src/StateMachines/StateMachine.gd" id="2_pj146"]
+[ext_resource type="PackedScene" uid="uid://q5uy2xebe2y0" path="res://src/Enemies/Swiper/SwiperStates/FindTarget.tscn" id="5_k5pwq"]
+[ext_resource type="PackedScene" uid="uid://coxcp8uh5muts" path="res://src/Enemies/Swiper/SwiperStates/MoveToTarget.tscn" id="6_job8q"]
+[ext_resource type="PackedScene" uid="uid://cxa4h4eq4kyxg" path="res://src/Enemies/Swiper/SwiperStates/Attack.tscn" id="7_x4qls"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eglyf"]
+radius = 15.1327
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xvxx5"]
+radius = 310.232
+
+[node name="Swiper" type="Area2D"]
+script = ExtResource("1_fjl12")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_eglyf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_m0lsv")
+animation = &"idle"
+
+[node name="EnemyFinder" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyFinder"]
+shape = SubResource("CircleShape2D_xvxx5")
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("2_pj146")
+
+[node name="Idle" parent="StateMachine" instance=ExtResource("2_56yug")]
+
+[node name="FindTarget" parent="StateMachine" instance=ExtResource("5_k5pwq")]
+
+[node name="MoveToTarget" parent="StateMachine" instance=ExtResource("6_job8q")]
+
+[node name="Attack" parent="StateMachine" instance=ExtResource("7_x4qls")]

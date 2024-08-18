@@ -71,8 +71,10 @@ texture = ExtResource("1_sw2bd")
 expand_mode = 3
 
 [node name="Max_Health" type="ProgressBar" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/MaxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+step = 1.0
 value = 100.0
 
 [node name="FreekContainer" type="HBoxContainer" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer"]
@@ -84,8 +86,10 @@ texture = ExtResource("1_sw2bd")
 expand_mode = 3
 
 [node name="Freek_Health" type="ProgressBar" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/FreekContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+step = 1.0
 value = 100.0
 
 [node name="LabelArea" type="Label" parent="GuiPanelMargin/HBoxContainer"]
