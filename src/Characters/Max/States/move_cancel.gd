@@ -9,6 +9,7 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	anim_tween.set_parallel(true)
 	anim_tween.tween_property(max_player._leg_bottom_left, "position", Vector2(-28, 28), 0.25)
 	anim_tween.tween_property(max_player._leg_top_right, "position", Vector2(28, -28), 0.25)
+	anim_tween.finished.connect(handle_animation_complete)
 
 func physics_update(_delta: float):
 	if Input.is_action_just_pressed("move_forward") \
@@ -16,6 +17,9 @@ func physics_update(_delta: float):
 	 or Input.is_action_just_pressed("move_left") \
 	 or Input.is_action_just_pressed("move_right"):
 		finished.emit(MOVE_WINDUP)
+
+func handle_animation_complete():
+	finished.emit(MOVE_IDLE)
 
 func exit():
 	anim_tween.kill()
