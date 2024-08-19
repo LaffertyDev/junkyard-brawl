@@ -42,6 +42,7 @@
 
 [Sun x] Add basic sound effects
 [Sun x] Add screen shake
+[Sun x] Find a better rotation sound
 
 Hammer UX Improvements
 * Tune screen shake
@@ -50,6 +51,10 @@ Hammer UX Improvements
 * Hammer should wind down
 * Enemies should be knocked back
 
+Max Movement UX Improvements
+* Add sound for foot windup
+* Add sound for when a foot "slams" down
+* Fix pixel jitter when max body is moving
 
 Add a kill counter for number of enemies
 

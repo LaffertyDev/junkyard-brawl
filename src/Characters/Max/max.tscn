@@ -1,18 +1,23 @@
-[gd_scene load_steps=18 format=3 uid="uid://c7rfvjpqsmeb8"]
+[gd_scene load_steps=23 format=3 uid="uid://c7rfvjpqsmeb8"]
 
 [ext_resource type="Script" path="res://src/Characters/Max/max.gd" id="1_enr7n"]
 [ext_resource type="Texture2D" uid="uid://brcocx6q6doft" path="res://src/Characters/Max/max_torso.png" id="2_u1ccp"]
 [ext_resource type="Texture2D" uid="uid://bmy80gftuxvjt" path="res://src/Characters/Max/max_leg.png" id="3_68rjg"]
 [ext_resource type="AudioStream" uid="uid://83m6e7s6ch7v" path="res://src/Characters/Max/bang_short.ogg" id="5_0yqge"]
 [ext_resource type="SpriteFrames" uid="uid://cajnowuwd4by5" path="res://src/Characters/Max/max_hammer_sprite_frames.tres" id="5_wybb3"]
+[ext_resource type="AudioStream" uid="uid://o1hjs61v3dgd" path="res://src/Characters/Max/gear_spinning_loop.mp3" id="6_5pobk"]
 [ext_resource type="Script" path="res://src/StateMachines/StateMachine.gd" id="6_qciws"]
-[ext_resource type="AudioStream" uid="uid://cns3yqprwem8k" path="res://src/Characters/Max/robot_whizz2.wav" id="6_u4o2c"]
 [ext_resource type="Script" path="res://src/Characters/Max/States/move_idle.gd" id="7_n808q"]
 [ext_resource type="Script" path="res://src/Characters/Max/States/move_cancel.gd" id="8_1ekhc"]
 [ext_resource type="Script" path="res://src/Characters/Max/States/move_commit.gd" id="9_ser34"]
 [ext_resource type="Script" path="res://src/Characters/Max/States/move_windup.gd" id="10_bmamo"]
 [ext_resource type="Script" path="res://src/Characters/Max/States/move_unpowered.gd" id="10_f18k6"]
 [ext_resource type="Script" path="res://src/Characters/Max/States/move_die.gd" id="11_1ovke"]
+[ext_resource type="Script" path="res://src/Characters/Max/States/hammer_state_idle.gd" id="14_ljfqt"]
+[ext_resource type="Script" path="res://src/Characters/Max/States/hammer_state_cooldown.gd" id="15_dmuc1"]
+[ext_resource type="Script" path="res://src/Characters/Max/States/hammer_state_charging.gd" id="16_y5amj"]
+[ext_resource type="Script" path="res://src/Characters/Max/States/hammer_state_unpowered.gd" id="17_pued2"]
+[ext_resource type="Script" path="res://src/Characters/Max/States/hammer_state_actuating.gd" id="18_4esov"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gbgva"]
 radius = 32.0
@@ -84,9 +89,9 @@ shape = SubResource("RectangleShape2D_hwxcy")
 
 [node name="audio_torso_rotate" type="AudioStreamPlayer" parent="max_torso"]
 unique_name_in_owner = true
-stream = ExtResource("6_u4o2c")
-volume_db = -30.0
-pitch_scale = 0.5
+stream = ExtResource("6_5pobk")
+volume_db = -10.0
+pitch_scale = 0.85
 
 [node name="MovementState" type="Node" parent="."]
 unique_name_in_owner = true
@@ -110,6 +115,24 @@ script = ExtResource("10_f18k6")
 [node name="Move_Die" type="Node" parent="MovementState"]
 script = ExtResource("11_1ovke")
 
+[node name="HammerState" type="Node" parent="."]
+script = ExtResource("6_qciws")
+
+[node name="Idle" type="Node" parent="HammerState"]
+script = ExtResource("14_ljfqt")
+
+[node name="Cooldown" type="Node" parent="HammerState"]
+script = ExtResource("15_dmuc1")
+
+[node name="Charging" type="Node" parent="HammerState"]
+script = ExtResource("16_y5amj")
+
+[node name="Unpowered" type="Node" parent="HammerState"]
+script = ExtResource("17_pued2")
+
+[node name="Actuating" type="Node" parent="HammerState"]
+script = ExtResource("18_4esov")
+
 [node name="MaxCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
 
@@ -120,6 +143,5 @@ collision_mask = 32768
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FreekEnterRadius"]
 shape = SubResource("CircleShape2D_5j42g")
 
-[connection signal="finished" from="max_torso/audio_torso_rotate" to="." method="_on_audio_torso_rotate_finished"]
 [connection signal="body_entered" from="FreekEnterRadius" to="." method="_on_freek_enter_radius_body_entered"]
 [connection signal="body_exited" from="FreekEnterRadius" to="." method="_on_freek_enter_radius_body_exited"]

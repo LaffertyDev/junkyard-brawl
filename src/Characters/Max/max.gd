@@ -11,9 +11,12 @@ class_name Max extends CharacterBody2D
 @warning_ignore("unused_private_class_variable")
 @onready var _max_camera: Camera2D = %MaxCamera
 @onready var _torso: Node2D = %max_torso
+@warning_ignore("unused_private_class_variable")
 @onready var _hammer: AnimatedSprite2D = %max_hammer
+@warning_ignore("unused_private_class_variable")
 @onready var _hammer_sound: AudioStreamPlayer = %hammer_sound
 @onready var _rotation_sound: AudioStreamPlayer = %audio_torso_rotate
+@warning_ignore("unused_private_class_variable")
 @onready var _hammer_attack_damage_scan_area: Area2D = %AttackDamageScanArea
 
 # screen shake from https://www.youtube.com/watch?v=LGt-jjVf-ZU
@@ -39,17 +42,7 @@ func _physics_process(delta: float) -> void:
 			start_rotating()
 		else:
 			stop_rotating()
-		_torso.rotation = lerp_angle(_torso.rotation, target_angle, 1.0 * delta)
-
-		if Input.is_action_just_pressed("action_primary"):
-			shake_strength = 2
-			_hammer.animation = "engage"
-			_hammer_sound.play()
-			var areas_hit = _hammer_attack_damage_scan_area.get_overlapping_areas()
-			for area in areas_hit:
-				area.take_damage(1)
-		elif Input.is_action_just_released("action_primary"):
-			_hammer.animation = "idle"
+		_torso.rotation = lerp_angle(_torso.rotation, target_angle, 1.25 * delta)
 	else:
 		stop_rotating()
 
@@ -72,7 +65,7 @@ func start_rotating() -> void:
 	if audio_tween:
 		audio_tween.kill()
 		audio_tween = null
-	_rotation_sound.volume_db = -30
+	_rotation_sound.volume_db = -10
 	if not _rotation_sound.playing:
 		_rotation_sound.play()
 
