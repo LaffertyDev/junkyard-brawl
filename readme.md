@@ -65,3 +65,21 @@ https://itch.io/jam/gmtk-2024
 
 * https://pixeljoint.com/pixelart/61159.htm
 	I love the drill animation. would make a fun mech with enough wind up to get Max out of the way.
+
+
+## Asset CC Credits
+
+* "Bang Short": 3 Explosion Bangs Copyright 2012 Iwan 'qubodup' Gabovitch <http://qubodup.net>
+* "Robot Whizz" Author: Lee Barkovich URL: http://www.archive.org/details/Berklee44Barkovich http://www.lbarkovich.com/ License: Creative Commons Attribution 3.0 Distributior: OpenGameArt.org
+
+
+### Maybe List
+
+* https://archive.org/details/Berklee44Barkovich
+	(Mech sounds I may not actually use. Attribution 3.0)
+
+* https://opengameart.org/content/robot-voice-pack
+	(Robot voice pack. Incredible. May not actually use.)
+* Some sounds from Pixabay (Pixabay profile) which says commercial use is a-okay.
+* https://opengameart.org/content/the-free-firearm-sound-library
+	(Good gun audio effects, CC0)

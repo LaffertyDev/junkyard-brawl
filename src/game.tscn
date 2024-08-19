@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://8d0tvl7vuu6" path="res://src/Arena.tscn" id="1_len5e"]
 [ext_resource type="PackedScene" uid="uid://c7rfvjpqsmeb8" path="res://src/Characters/Max/max.tscn" id="1_x8fa0"]
 [ext_resource type="PackedScene" uid="uid://bog6h6vlxchda" path="res://src/Characters/Freek/freek.tscn" id="2_px2hi"]
-[ext_resource type="PackedScene" uid="uid://tr3eddb5yvvm" path="res://src/HUD.tscn" id="4_5g130"]
-[ext_resource type="PackedScene" uid="uid://k3pncah0uhq7" path="res://src/Enemies/Swiper/Swiper.tscn" id="6_6e0x7"]
-[ext_resource type="PackedScene" uid="uid://bp2tjesipajy6" path="res://src/Enemies/Spawner/Spawner.tscn" id="7_i1o7u"]
+[ext_resource type="PackedScene" uid="uid://tr3eddb5yvvm" path="res://src/hud.tscn" id="4_5g130"]
+[ext_resource type="PackedScene" uid="uid://k3pncah0uhq7" path="res://src/Enemies/Swiper/swiper.tscn" id="6_6e0x7"]
+[ext_resource type="PackedScene" uid="uid://bp2tjesipajy6" path="res://src/Enemies/Spawner/spawner.tscn" id="7_i1o7u"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_5h0ui")

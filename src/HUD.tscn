@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://tr3eddb5yvvm"]
 
-[ext_resource type="Script" path="res://src/hud.gd" id="1_a40xm"]
-[ext_resource type="Texture2D" uid="uid://cqru1roa5q72x" path="res://src/icon.svg" id="1_sw2bd"]
-[ext_resource type="Theme" uid="uid://c3xglhnien5t5" path="res://src/UI/hud_theme.tres" id="2_ck4kv"]
+[ext_resource type="Script" path="res://src/hud.gd" id="1_cutv6"]
+[ext_resource type="Theme" uid="uid://c3xglhnien5t5" path="res://src/UI/hud_theme.tres" id="2_671ur"]
+[ext_resource type="Texture2D" uid="uid://cqru1roa5q72x" path="res://src/icon.svg" id="3_dv845"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -11,7 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_a40xm")
+script = ExtResource("1_cutv6")
 
 [node name="Left_Pillarbox" type="Panel" parent="."]
 unique_name_in_owner = true
@@ -19,7 +19,7 @@ layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 grow_vertical = 2
-theme = ExtResource("2_ck4kv")
+theme = ExtResource("2_671ur")
 
 [node name="Right_Pillarbox" type="Panel" parent="."]
 unique_name_in_owner = true
@@ -31,7 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(-1, 1)
-theme = ExtResource("2_ck4kv")
+theme = ExtResource("2_671ur")
 
 [node name="GuiPanelMargin" type="MarginContainer" parent="."]
 unique_name_in_owner = true
@@ -67,7 +67,7 @@ layout_mode = 2
 
 [node name="MaxIcon" type="TextureRect" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/MaxContainer"]
 layout_mode = 2
-texture = ExtResource("1_sw2bd")
+texture = ExtResource("3_dv845")
 expand_mode = 3
 
 [node name="Max_Health" type="ProgressBar" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/MaxContainer"]
@@ -82,7 +82,7 @@ layout_mode = 2
 
 [node name="Freekicon" type="TextureRect" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/FreekContainer"]
 layout_mode = 2
-texture = ExtResource("1_sw2bd")
+texture = ExtResource("3_dv845")
 expand_mode = 3
 
 [node name="Freek_Health" type="ProgressBar" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/FreekContainer"]

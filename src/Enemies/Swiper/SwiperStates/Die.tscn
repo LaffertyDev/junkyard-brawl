@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d2x4g07lt17fu"]
 
-[ext_resource type="Script" path="res://src/Enemies/Swiper/SwiperStates/die.gd" id="1_oqig6"]
+[ext_resource type="Script" path="res://src/Enemies/Swiper/SwiperStates/die.gd" id="1_obi12"]
 
 [node name="Die" type="Node"]
-script = ExtResource("1_oqig6")
+script = ExtResource("1_obi12")

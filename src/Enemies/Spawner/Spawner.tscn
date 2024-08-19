@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bp2tjesipajy6"]
 
-[ext_resource type="Script" path="res://src/Enemies/Spawner/spawner.gd" id="1_67w55"]
+[ext_resource type="Script" path="res://src/Enemies/Spawner/spawner.gd" id="1_olxsp"]
 
 [node name="Spawner" type="Node2D"]
-script = ExtResource("1_67w55")
+script = ExtResource("1_olxsp")
 
 [node name="spawn_timer" type="Timer" parent="."]
 autostart = true

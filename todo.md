@@ -1,6 +1,6 @@
 # TODO
 
-Build Todolist
+[Sat x] Build Todolist
 
 [Fri x] Pick game and do basic design
 [Fri x] Setup Godot Project
@@ -35,29 +35,38 @@ Build Todolist
 [Sun x] Make max attack actually do damage
 
 [Sun x] Add spawn for basic large enemy
-
 [Sun x] Add defeat screen for when max or freek take damage and decide how defeat and victory work
-
 [Sun x] Add pause menu
 [Sun x] Add main menu scene
+[Sun x] Add automated build to web
+
+[Sun x] Add basic sound effects
+[Sun x] Add screen shake
+
+Hammer UX Improvements
+* Tune screen shake
+* Body should lurch backwards when hammer activates
+* Hammer should have a windup "charge" animation
+* Hammer should wind down
+* Enemies should be knocked back
+
+
+Add a kill counter for number of enemies
+
 
 Make Freek Useful:
 * Add pickup for health for Max
 * Add pickup for Energy for Max
 * ???
 
+Build arena, grid, and tutorial
 
-
-Add a kill counter for number of enemies
-
-Add automated build to web
+Build win and progression
 
 ## UX Improvements
 
 * Camera should _lead_ Freek
 * Camera on Max should lead him so he's looking ahead, not center
-
-
 
 
 ## ASSETS
