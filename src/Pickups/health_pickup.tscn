@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://dult7lwpl1pyv"]
+
+[ext_resource type="SpriteFrames" uid="uid://dga07onosbmr3" path="res://src/Pickups/health_pickup_sprite_frames.tres" id="2_pvgwy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6gcnu"]
+radius = 8.0
+
+[node name="HealthPickup" type="Area2D"]
+collision_layer = 8192
+collision_mask = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_pvgwy")
+autoplay = "default"
+frame = 2
+frame_progress = 0.0928963
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6gcnu")

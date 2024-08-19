@@ -10,13 +10,16 @@ var freek_maximum_health: int
 var max_current_health: int
 var max_maximum_health: int
 
+var freek_hold_status: Enums.FreekItemHeld
+
 func Initialize() -> void:
-	max_current_health = 100
-	max_maximum_health = 100
-	freek_current_health = 100
-	freek_maximum_health = 100
+	max_current_health = 0
+	max_maximum_health = 10
+	freek_current_health = 3
+	freek_maximum_health = 3
 	is_freek_near_max = false
 	current_pilot_state = Enums.PilotState.Ejected
+	freek_hold_status = Enums.FreekItemHeld.Nothing
 
 func SetPilotState(state_to_be: Enums.PilotState) -> void:
 	current_pilot_state = state_to_be

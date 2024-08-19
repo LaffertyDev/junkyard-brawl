@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://btutvf1fatmwy"]
+[gd_scene load_steps=10 format=3 uid="uid://btutvf1fatmwy"]
 
 [ext_resource type="Script" path="res://src/game.gd" id="1_5h0ui"]
 [ext_resource type="PackedScene" uid="uid://8d0tvl7vuu6" path="res://src/Arena.tscn" id="1_len5e"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://tr3eddb5yvvm" path="res://src/hud.tscn" id="4_5g130"]
 [ext_resource type="PackedScene" uid="uid://k3pncah0uhq7" path="res://src/Enemies/Swiper/swiper.tscn" id="6_6e0x7"]
 [ext_resource type="PackedScene" uid="uid://bp2tjesipajy6" path="res://src/Enemies/Spawner/spawner.tscn" id="7_i1o7u"]
+[ext_resource type="PackedScene" uid="uid://dult7lwpl1pyv" path="res://src/Pickups/health_pickup.tscn" id="9_jxf43"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_5h0ui")
@@ -33,3 +34,12 @@ position = Vector2(-1, 1196)
 
 [node name="Spawner" parent="." instance=ExtResource("7_i1o7u")]
 position = Vector2(1, -183)
+
+[node name="HealthPickup" parent="." instance=ExtResource("9_jxf43")]
+position = Vector2(-177, 401)
+
+[node name="HealthPickup2" parent="." instance=ExtResource("9_jxf43")]
+position = Vector2(-177, 424)
+
+[node name="HealthPickup3" parent="." instance=ExtResource("9_jxf43")]
+position = Vector2(-178, 448)

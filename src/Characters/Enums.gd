@@ -4,3 +4,8 @@ enum PilotState {
 	Ejected,
 	Piloting
 }
+
+enum FreekItemHeld {
+	Nothing,
+	HealthPickup
+}

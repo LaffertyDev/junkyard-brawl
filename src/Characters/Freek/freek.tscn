@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bog6h6vlxchda"]
+[gd_scene load_steps=12 format=3 uid="uid://bog6h6vlxchda"]
 
 [ext_resource type="Script" path="res://src/Characters/Freek/freek.gd" id="1_r4tme"]
 [ext_resource type="SpriteFrames" uid="uid://kijdvek67r3" path="res://src/Characters/Freek/freek_sprites.tres" id="2_07p1d"]
@@ -7,13 +7,20 @@
 [ext_resource type="Script" path="res://src/Characters/Freek/States/move.gd" id="5_t3prf"]
 [ext_resource type="Script" path="res://src/Characters/Freek/States/piloting.gd" id="6_10qjl"]
 [ext_resource type="Script" path="res://src/Characters/Freek/States/die.gd" id="6_pbdhg"]
+[ext_resource type="AudioStream" uid="uid://ct3i22hf11l6n" path="res://src/Pickups/metalLatch.ogg" id="8_big6s"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vpejk"]
 radius = 6.0
 height = 18.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_505h4"]
+radius = 13.0384
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aeget"]
+radius = 56.0089
+
 [node name="Freek" type="CharacterBody2D"]
-collision_layer = 32897
+collision_layer = 129
 script = ExtResource("1_r4tme")
 
 [node name="collision_body" type="CollisionShape2D" parent="."]
@@ -51,3 +58,26 @@ drag_left_margin = 0.1
 drag_top_margin = 0.15
 drag_right_margin = 0.1
 drag_bottom_margin = 0.15
+
+[node name="item_pickup_radius" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 8192
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="item_pickup_radius"]
+shape = SubResource("CircleShape2D_505h4")
+
+[node name="pickup_sound" type="AudioStreamPlayer" parent="item_pickup_radius"]
+unique_name_in_owner = true
+stream = ExtResource("8_big6s")
+pitch_scale = 0.71
+
+[node name="interaction_area" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
+shape = SubResource("CircleShape2D_aeget")
+
+[connection signal="area_entered" from="item_pickup_radius" to="." method="_on_item_pickup_radius_area_entered"]
+[connection signal="body_entered" from="interaction_area" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="interaction_area" to="." method="_on_interaction_area_body_exited"]

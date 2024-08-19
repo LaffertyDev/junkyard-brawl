@@ -1,12 +1,19 @@
 class_name HUD extends Control
 
-@onready var _eject_button: Button = %ButtonEject
 @onready var _margin_container: MarginContainer = %GuiPanelMargin
 @onready var _left_pillarbox: Panel = %Left_Pillarbox
 @onready var _right_pillarbox: Panel = %Right_Pillarbox
 @onready var _max_health: ProgressBar = %Max_Health
 @onready var _freek_health: ProgressBar = %Freek_Health
 @onready var _pause_panel: Panel = %pause_panel
+@onready var _item_held_texture: TextureRect = %item_held_texture
+@onready var _max_container: Control = %MaxContainer
+
+@onready var _drill_repair_sound: AudioStreamPlayer = %repair_sound
+
+@onready var _button_eject: Button = %button_eject
+@onready var _button_pilot: Button = %button_pilot
+@onready var _button_heal: Button = %button_heal
 
 var ui_tween: Tween
 
@@ -19,30 +26,39 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("pause_game"):
 		get_tree().paused = true
 		_pause_panel.show()
+		
+	if PlayerState.freek_hold_status == Enums.FreekItemHeld.Nothing:
+		_item_held_texture.hide()
+	else:
+		_item_held_texture.show()
 
 	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:
-		_eject_button.text = "Eject"
-		_eject_button.disabled = false
-		_eject_button.show()
-	if PlayerState.current_pilot_state == Enums.PilotState.Ejected:
-		_eject_button.text = "Pilot"
+		_button_eject.show()
+		_button_pilot.hide()
+		_button_heal.hide()
+	else:
 		if PlayerState.is_freek_near_max:
-			_eject_button.disabled = false
-			_eject_button.show()
+			if PlayerState.freek_hold_status == Enums.FreekItemHeld.HealthPickup \
+				and PlayerState.max_current_health != PlayerState.max_maximum_health:
+				_button_eject.hide()
+				_button_pilot.hide()
+				_button_heal.show()
+			elif PlayerState.max_current_health > 0:
+				_button_eject.hide()
+				_button_pilot.show()
+				_button_heal.hide()
+			else:
+				_button_eject.hide()
+				_button_pilot.hide()
+				_button_heal.hide()
 		else:
-			_eject_button.disabled = true
-			_eject_button.hide()
+			_button_eject.hide()
+			_button_pilot.hide()
+			_button_heal.hide()
 
 func _on_button_eject_pressed() -> void:
-	if PlayerState.current_pilot_state == Enums.PilotState.Ejected:
-		_eject_button.text = "Eject"
-		PlayerState.SetPilotState(Enums.PilotState.Piloting)
-		animate_scene_swap(false)
-
-	elif PlayerState.current_pilot_state == Enums.PilotState.Piloting:
-		_eject_button.text = "Pilot"
-		PlayerState.SetPilotState(Enums.PilotState.Ejected)
-		animate_scene_swap(true)
+	PlayerState.SetPilotState(Enums.PilotState.Ejected)
+	animate_scene_swap(true)
 
 func animate_scene_swap(show_ui: bool) -> void:
 	if ui_tween:
@@ -70,3 +86,15 @@ func set_margin_right(val):
 func _on_unpause_pressed() -> void:
 	_pause_panel.hide()
 	get_tree().paused = false
+
+
+func _on_button_heal_pressed() -> void:
+	const repair_amount = 10
+	PlayerState.max_current_health = min(PlayerState.max_maximum_health, PlayerState.max_current_health + repair_amount)
+	PlayerState.freek_hold_status = Enums.FreekItemHeld.Nothing
+	_drill_repair_sound.play()
+
+func _on_button_pilot_pressed() -> void:
+	PlayerState.SetPilotState(Enums.PilotState.Piloting)
+	animate_scene_swap(false)
+	_max_container.show()

@@ -66,6 +66,7 @@ pause_game={
 
 2d_physics/layer_8="Players_To_Target"
 2d_physics/layer_12="Enemies_To_Scan_For_Hitting"
+2d_physics/layer_14="Items_That_Can_Be_Picked_Up"
 2d_physics/layer_16="Things_Freek_Can_Interact_With"
 
 [rendering]

@@ -45,30 +45,31 @@
 [Sun x] Find a better rotation sound
 
 
-TWENTY FOUR HOUR CHECKPOINT
-
 * [Mon x] Pick final game shape
 
+* [Mon x] Make Max and Freek icon sprites
+
+
+Make Freek Useful:
+* [Mon x] Add drop system (so enemies who die drop REPAIR TOKENS)
+* [Mon x] Enable Freek to carry a single item
+* [Mon x] If Freek boards max while carrying an item, he will consume it and use it
+* [Mon x] MAX cannot die, he can always be repaired by freek
+* BUG: Enemies will constantly follow FREEK if he boards MAX and not reacquire a target
 
 Max Movement UX Improvements
 * Add sound for foot windup
 * Add sound for when a foot "slams" down
 * Fix pixel jitter when max body is moving
 
-Make Freek Useful:
-* Add drop system (so enemies who die drop REPAIR TOKENS)
-* Make Max take energy
-* Enable Freek to carry a single item
-* If Freek boards max while carrying an item, he will consume it and use it
-* Add energy depots at the four map corners
-
-
-* Add pickup for health for Max
-* Add pickup for Energy for Max (and build energy system)
+GAME FEEL
+* Enemies should have more than 1 hp
+* Enemies should spawn slowly
+* [Mon x] Make MAX move a little faster
 * Add pickup attachments for Freek to give to Max? (A gun would be pretty lit.)
-* Give freek an attack and make tiny enemies that Max can't hit?
-* Freek can move under Max, but not over his feet
-* Freek takes damage if he gets stepped on
+
+
+* Freek takes damage if he gets stepped on or touches a robot and slides back from the direction of the robot
 
 GAMEPLAY TODO
 * [Mon x] Design and build tutorial and starting area

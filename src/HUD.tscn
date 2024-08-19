@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://tr3eddb5yvvm"]
+[gd_scene load_steps=7 format=3 uid="uid://tr3eddb5yvvm"]
 
 [ext_resource type="Script" path="res://src/hud.gd" id="1_cutv6"]
 [ext_resource type="Theme" uid="uid://c3xglhnien5t5" path="res://src/UI/hud_theme.tres" id="2_671ur"]
-[ext_resource type="Texture2D" uid="uid://cqru1roa5q72x" path="res://src/icon.svg" id="3_dv845"]
+[ext_resource type="Texture2D" uid="uid://dyxmdsdtcxa84" path="res://src/UI/max_icon.png" id="3_h170h"]
+[ext_resource type="Texture2D" uid="uid://dwniqemnbmmbp" path="res://src/UI/item_held.png" id="4_fxfbm"]
+[ext_resource type="Texture2D" uid="uid://h2gaq1oyuiy" path="res://src/UI/freek_icon.png" id="4_n722f"]
+[ext_resource type="AudioStream" uid="uid://bjutg83tw8jsu" path="res://src/UI/drill_repair_sound.mp3" id="5_3eewk"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -18,6 +21,7 @@ unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
+offset_right = 100.0
 grow_vertical = 2
 theme = ExtResource("2_671ur")
 
@@ -28,6 +32,7 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = 100.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(-1, 1)
@@ -41,9 +46,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 20
+theme_override_constants/margin_left = 120
 theme_override_constants/margin_top = 20
-theme_override_constants/margin_right = 20
+theme_override_constants/margin_right = 120
 theme_override_constants/margin_bottom = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GuiPanelMargin"]
@@ -62,44 +67,42 @@ offset_bottom = 58.0
 size_flags_horizontal = 2
 size_flags_vertical = 0
 
-[node name="MaxContainer" type="HBoxContainer" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer"]
-layout_mode = 2
-
-[node name="MaxIcon" type="TextureRect" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/MaxContainer"]
-layout_mode = 2
-texture = ExtResource("3_dv845")
-expand_mode = 3
-
-[node name="Max_Health" type="ProgressBar" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/MaxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-step = 1.0
-value = 100.0
-
 [node name="FreekContainer" type="HBoxContainer" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer"]
 layout_mode = 2
 
 [node name="Freekicon" type="TextureRect" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/FreekContainer"]
 layout_mode = 2
-texture = ExtResource("3_dv845")
-expand_mode = 3
+texture = ExtResource("4_n722f")
 
 [node name="Freek_Health" type="ProgressBar" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/FreekContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 1
 step = 1.0
 value = 100.0
+show_percentage = false
 
-[node name="LabelArea" type="Label" parent="GuiPanelMargin/HBoxContainer"]
+[node name="MaxContainer" type="HBoxContainer" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="MaxIcon" type="TextureRect" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/MaxContainer"]
+layout_mode = 2
+texture = ExtResource("3_h170h")
+
+[node name="Max_Health" type="ProgressBar" parent="GuiPanelMargin/HBoxContainer/Control/VBoxContainer/MaxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Junkyard"
-horizontal_alignment = 1
+step = 1.0
+value = 100.0
+show_percentage = false
 
 [node name="LabelScore" type="Label" parent="GuiPanelMargin/HBoxContainer"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -107,6 +110,7 @@ text = "Wave: 9000"
 horizontal_alignment = 2
 
 [node name="Control" type="Control" parent="GuiPanelMargin"]
+visible = false
 layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="GuiPanelMargin/Control"]
@@ -115,7 +119,7 @@ anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -27.0
+offset_top = -67.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/margin_left = 80
@@ -125,12 +129,15 @@ theme_override_constants/margin_bottom = 40
 [node name="ProgressBar" type="ProgressBar" parent="GuiPanelMargin/Control/MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 8
+max_value = 10.0
+step = 1.0
 
 [node name="Control2" type="Control" parent="GuiPanelMargin"]
 layout_mode = 2
 
-[node name="ButtonEject" type="Button" parent="GuiPanelMargin/Control2"]
+[node name="button_eject" type="Button" parent="GuiPanelMargin/Control2"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -145,6 +152,59 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 focus_mode = 0
 text = "Eject"
+
+[node name="button_pilot" type="Button" parent="GuiPanelMargin/Control2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -43.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Pilot"
+
+[node name="button_heal" type="Button" parent="GuiPanelMargin/Control2"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -59.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Repair"
+
+[node name="repair_sound" type="AudioStreamPlayer" parent="GuiPanelMargin/Control2/button_heal"]
+unique_name_in_owner = true
+stream = ExtResource("5_3eewk")
+
+[node name="Control3" type="Control" parent="GuiPanelMargin"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="item_held_texture" type="TextureRect" parent="GuiPanelMargin/Control3"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 32.0
+grow_vertical = 0
+pivot_offset = Vector2(0, 32)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4_fxfbm")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 0
@@ -177,5 +237,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Press to Unpause"
 
-[connection signal="pressed" from="GuiPanelMargin/Control2/ButtonEject" to="." method="_on_button_eject_pressed"]
+[connection signal="pressed" from="GuiPanelMargin/Control2/button_eject" to="." method="_on_button_eject_pressed"]
+[connection signal="pressed" from="GuiPanelMargin/Control2/button_pilot" to="." method="_on_button_pilot_pressed"]
+[connection signal="pressed" from="GuiPanelMargin/Control2/button_heal" to="." method="_on_button_heal_pressed"]
 [connection signal="pressed" from="pause_panel/button_unpause" to="." method="_on_unpause_pressed"]

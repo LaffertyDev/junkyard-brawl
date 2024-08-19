@@ -52,14 +52,6 @@ func take_damage(damage: int) -> void:
 	if PlayerState.max_current_health <= 0:
 		%MovementState.send_message_to_state("Die")
 
-func _on_freek_enter_radius_body_entered(_body: Node2D) -> void:
-	if PlayerState.max_current_health > 0:
-		PlayerState.is_freek_near_max = true
-
-func _on_freek_enter_radius_body_exited(_body: Node2D) -> void:
-	PlayerState.is_freek_near_max = false
-
-
 # TODO - This breaks my brain a bit. Audio processing seems a little buggy.
 var audio_tween: Tween
 func start_rotating() -> void:
