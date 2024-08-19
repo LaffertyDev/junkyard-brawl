@@ -38,7 +38,8 @@ func _physics_process(delta: float) -> void:
 		_max_camera.offset = Vector2(0, 0)
 	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:
 		var target_angle = get_global_mouse_position().angle_to_point(self.position) - (PI / 2)
-		if abs(target_angle - _torso.rotation) > (PI / 8):
+		var remaining_angle = int(abs(rad_to_deg(target_angle - _torso.rotation))) % 360
+		if remaining_angle > 45:
 			start_rotating()
 		else:
 			stop_rotating()
@@ -75,5 +76,3 @@ func stop_rotating() -> void:
 			audio_tween = get_tree().create_tween()
 			audio_tween.tween_property(_rotation_sound, "volume_db", -40, 0.25)
 			audio_tween.tween_callback(_rotation_sound.stop)
-		else:
-			print("Stop requested but audio tween is valid")

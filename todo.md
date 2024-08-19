@@ -47,22 +47,7 @@
 
 TWENTY FOUR HOUR CHECKPOINT
 
-* Pick final game shape
-* Gauntlet (Fight through a level, kill spawners, get to the end)
-	Boss
-	Spawners die
-	Max movement would feel bad for big levels
-* Arena (fight till you die)
-	More enemies
-	Drops
-* Arena (wave fighter)
-	Boss
-	Spawners take queues from a level
-
-YOU FOUND A BUG.
-* State system with timers breaks the model of the state system.
-* A timer or other delayed execution task will resume executing.
-* So you need to check if the current state is still active whenever a delayed task comes about.
+* [Mon x] Pick final game shape
 
 
 Max Movement UX Improvements
@@ -71,6 +56,13 @@ Max Movement UX Improvements
 * Fix pixel jitter when max body is moving
 
 Make Freek Useful:
+* Add drop system (so enemies who die drop REPAIR TOKENS)
+* Make Max take energy
+* Enable Freek to carry a single item
+* If Freek boards max while carrying an item, he will consume it and use it
+* Add energy depots at the four map corners
+
+
 * Add pickup for health for Max
 * Add pickup for Energy for Max (and build energy system)
 * Add pickup attachments for Freek to give to Max? (A gun would be pretty lit.)
@@ -79,7 +71,7 @@ Make Freek Useful:
 * Freek takes damage if he gets stepped on
 
 GAMEPLAY TODO
-* Design and build tutorial and starting area
+* [Mon x] Design and build tutorial and starting area
 * Design and build Build arena
 	(How do enemies spawn? What is your player goal?)
 * Design win condition
@@ -121,3 +113,10 @@ Camera UX Improvements
 * Camera should _lead_ Freek
 * Camera on Max should lead him so he's looking ahead, not center
 
+
+ACTIVE BUGS:
+
+YOU FOUND A BUG.
+* State system with timers breaks the model of the state system.
+* A timer or other delayed execution task will resume executing.
+* So you need to check if the current state is still active whenever a delayed task comes about.

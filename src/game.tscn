@@ -18,10 +18,10 @@ script = ExtResource("1_5h0ui")
 visible = false
 
 [node name="max" parent="." instance=ExtResource("1_x8fa0")]
-position = Vector2(-1, -1)
+position = Vector2(0, 541)
 
 [node name="Freek" parent="." instance=ExtResource("2_px2hi")]
-position = Vector2(0, 762)
+position = Vector2(-5, 1678)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -29,7 +29,7 @@ position = Vector2(0, 762)
 unique_name_in_owner = true
 
 [node name="Swiper" parent="." instance=ExtResource("6_6e0x7")]
-position = Vector2(2, 420)
+position = Vector2(-1, 1196)
 
 [node name="Spawner" parent="." instance=ExtResource("7_i1o7u")]
 position = Vector2(1, -183)
