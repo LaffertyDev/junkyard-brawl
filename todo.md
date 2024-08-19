@@ -44,17 +44,25 @@
 [Sun x] Add screen shake
 [Sun x] Find a better rotation sound
 
+YOU FOUND A BUG.
+* State system with timers breaks the model of the state system.
+* A timer or other delayed execution task will resume executing.
+* So you need to check if the current state is still active whenever a delayed task comes about.
+
 Hammer UX Improvements
 * Tune screen shake
 * Body should lurch backwards when hammer activates
-* Hammer should have a windup "charge" animation
-* Hammer should wind down
+* [x] Hammer should have a windup "charge" animation
+* [x] Hammer should wind down
 * Enemies should be knocked back
+	(If I make them rigid bodies... would that work?)
 
 Max Movement UX Improvements
 * Add sound for foot windup
 * Add sound for when a foot "slams" down
 * Fix pixel jitter when max body is moving
+
+
 
 Add a kill counter for number of enemies
 
