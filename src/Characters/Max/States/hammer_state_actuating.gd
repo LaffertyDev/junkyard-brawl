@@ -1,6 +1,6 @@
 extends HammerStateBase
 
-func enter(_previous_state_path: String, data := {}) -> void:
+func enter(_previous_state_path: String, _data := {}) -> void:
 	max_player._hammer.animation = "engage"
 	max_player.shake_strength = 2
 	max_player._hammer_sound.play()

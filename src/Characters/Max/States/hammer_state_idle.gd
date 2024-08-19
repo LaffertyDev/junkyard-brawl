@@ -4,7 +4,7 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	print("Idle")
 	pass
 
-func update(delta: float) -> void:
+func update(_delta: float) -> void:
 	if PlayerState.current_pilot_state == Enums.PilotState.Ejected:
 		finished.emit(HAMMER_UNPOWERED)
 
