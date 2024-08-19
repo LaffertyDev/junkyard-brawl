@@ -40,4 +40,5 @@ func handle_receive_message(message: String, _data: Dictionary = {}) -> void:
 		finished.emit(MOVE_DIE)
 
 func exit():
-	anim_tween.kill()
+	if anim_tween:
+		anim_tween.kill()

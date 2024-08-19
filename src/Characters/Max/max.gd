@@ -12,26 +12,46 @@ class_name Max extends CharacterBody2D
 @onready var _max_camera: Camera2D = %MaxCamera
 @onready var _torso: Node2D = %max_torso
 @onready var _hammer: AnimatedSprite2D = %max_hammer
+@onready var _hammer_sound: AudioStreamPlayer = %hammer_sound
+@onready var _rotation_sound: AudioStreamPlayer = %audio_torso_rotate
 @onready var _hammer_attack_damage_scan_area: Area2D = %AttackDamageScanArea
 
-
+# screen shake from https://www.youtube.com/watch?v=LGt-jjVf-ZU
+var rng = RandomNumberGenerator.new()
+var shake_strength = 0.0
+var shake_fade = 7.5
 
 func _ready() -> void:
 	add_to_group("max")
 
+func get_shake_random_offset():
+	return Vector2(rng.randf_range(-shake_strength, shake_strength), rng.randf_range(-shake_strength, shake_strength))
+
 func _physics_process(delta: float) -> void:
+	if shake_strength > 0:
+		shake_strength = lerpf(shake_strength, 0, shake_fade * delta)
+		_max_camera.offset = get_shake_random_offset()
+	else:
+		_max_camera.offset = Vector2(0, 0)
 	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:
 		var target_angle = get_global_mouse_position().angle_to_point(self.position) - (PI / 2)
-
+		if abs(target_angle - _torso.rotation) > (PI / 8):
+			start_rotating()
+		else:
+			stop_rotating()
 		_torso.rotation = lerp_angle(_torso.rotation, target_angle, 1.0 * delta)
 
-		if Input.is_action_pressed("action_primary"):
+		if Input.is_action_just_pressed("action_primary"):
+			shake_strength = 2
 			_hammer.animation = "engage"
+			_hammer_sound.play()
 			var areas_hit = _hammer_attack_damage_scan_area.get_overlapping_areas()
 			for area in areas_hit:
 				area.take_damage(1)
-		else:
+		elif Input.is_action_just_released("action_primary"):
 			_hammer.animation = "idle"
+	else:
+		stop_rotating()
 
 func take_damage(damage: int) -> void:
 	PlayerState.max_current_health -= damage
@@ -44,3 +64,23 @@ func _on_freek_enter_radius_body_entered(_body: Node2D) -> void:
 
 func _on_freek_enter_radius_body_exited(_body: Node2D) -> void:
 	PlayerState.is_freek_near_max = false
+
+
+# TODO - This breaks my brain a bit. Audio processing seems a little buggy.
+var audio_tween: Tween
+func start_rotating() -> void:
+	if audio_tween:
+		audio_tween.kill()
+		audio_tween = null
+	_rotation_sound.volume_db = -30
+	if not _rotation_sound.playing:
+		_rotation_sound.play()
+
+func stop_rotating() -> void:
+	if _rotation_sound.playing:
+		if not audio_tween or not audio_tween.is_valid():
+			audio_tween = get_tree().create_tween()
+			audio_tween.tween_property(_rotation_sound, "volume_db", -40, 0.25)
+			audio_tween.tween_callback(_rotation_sound.stop)
+		else:
+			print("Stop requested but audio tween is valid")
