@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://btutvf1fatmwy"]
+[gd_scene load_steps=9 format=3 uid="uid://btutvf1fatmwy"]
 
 [ext_resource type="Script" path="res://src/game.gd" id="1_5h0ui"]
 [ext_resource type="PackedScene" uid="uid://8d0tvl7vuu6" path="res://src/Arena.tscn" id="1_len5e"]
 [ext_resource type="PackedScene" uid="uid://c7rfvjpqsmeb8" path="res://src/Characters/Max/max.tscn" id="1_x8fa0"]
+[ext_resource type="PackedScene" uid="uid://dchyi7csuovx6" path="res://src/World/world.tscn" id="2_jhqfn"]
 [ext_resource type="PackedScene" uid="uid://bog6h6vlxchda" path="res://src/Characters/Freek/freek.tscn" id="2_px2hi"]
 [ext_resource type="PackedScene" uid="uid://tr3eddb5yvvm" path="res://src/hud.tscn" id="4_5g130"]
 [ext_resource type="PackedScene" uid="uid://k3pncah0uhq7" path="res://src/Enemies/Swiper/swiper.tscn" id="6_6e0x7"]
@@ -11,12 +12,16 @@
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_5h0ui")
 
+[node name="World" parent="." instance=ExtResource("2_jhqfn")]
+
 [node name="Arena" parent="." instance=ExtResource("1_len5e")]
+visible = false
 
 [node name="max" parent="." instance=ExtResource("1_x8fa0")]
+position = Vector2(-1, -1)
 
 [node name="Freek" parent="." instance=ExtResource("2_px2hi")]
-position = Vector2(-129, 8)
+position = Vector2(0, 762)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -24,10 +29,7 @@ position = Vector2(-129, 8)
 unique_name_in_owner = true
 
 [node name="Swiper" parent="." instance=ExtResource("6_6e0x7")]
-position = Vector2(-76, 91)
-
-[node name="Swiper2" parent="." instance=ExtResource("6_6e0x7")]
-position = Vector2(-409, 274)
+position = Vector2(2, 420)
 
 [node name="Spawner" parent="." instance=ExtResource("7_i1o7u")]
 position = Vector2(1, -183)

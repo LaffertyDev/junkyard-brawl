@@ -70,7 +70,7 @@ https://itch.io/jam/gmtk-2024
 ## Asset CC Credits
 
 * "Bang Short": 3 Explosion Bangs Copyright 2012 Iwan 'qubodup' Gabovitch <http://qubodup.net>
-* "Robot Whizz" Author: Lee Barkovich URL: http://www.archive.org/details/Berklee44Barkovich http://www.lbarkovich.com/ License: Creative Commons Attribution 3.0 Distributior: OpenGameArt.org
+* Pixabay gear sounds (from Pixabay Profile)
 
 
 ### Maybe List

@@ -2,6 +2,8 @@ extends FreekState
 
 func enter(_previous_state_path: String, _data := {}) -> void:
 	freek_player._freek_sprites.animation = "idle"
+	freek_player._freek_camera.enabled = true
+	freek_player._collision_body.disabled = false
 
 func update(_delta: float) -> void:
 	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:

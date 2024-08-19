@@ -44,45 +44,80 @@
 [Sun x] Add screen shake
 [Sun x] Find a better rotation sound
 
+
+TWENTY FOUR HOUR CHECKPOINT
+
+* Pick final game shape
+* Gauntlet (Fight through a level, kill spawners, get to the end)
+	Boss
+	Spawners die
+	Max movement would feel bad for big levels
+* Arena (fight till you die)
+	More enemies
+	Drops
+* Arena (wave fighter)
+	Boss
+	Spawners take queues from a level
+
 YOU FOUND A BUG.
 * State system with timers breaks the model of the state system.
 * A timer or other delayed execution task will resume executing.
 * So you need to check if the current state is still active whenever a delayed task comes about.
 
-Hammer UX Improvements
-* Tune screen shake
-* Body should lurch backwards when hammer activates
-* [x] Hammer should have a windup "charge" animation
-* [x] Hammer should wind down
-* Enemies should be knocked back
-	(If I make them rigid bodies... would that work?)
 
 Max Movement UX Improvements
 * Add sound for foot windup
 * Add sound for when a foot "slams" down
 * Fix pixel jitter when max body is moving
 
-
-
-Add a kill counter for number of enemies
-
-
 Make Freek Useful:
 * Add pickup for health for Max
-* Add pickup for Energy for Max
-* ???
+* Add pickup for Energy for Max (and build energy system)
+* Add pickup attachments for Freek to give to Max? (A gun would be pretty lit.)
+* Give freek an attack and make tiny enemies that Max can't hit?
+* Freek can move under Max, but not over his feet
+* Freek takes damage if he gets stepped on
 
-Build arena, grid, and tutorial
+GAMEPLAY TODO
+* Design and build tutorial and starting area
+* Design and build Build arena
+	(How do enemies spawn? What is your player goal?)
+* Design win condition
+* Build win condition
+* Iterate on some progression
 
-Build win and progression
+ASSET TODO
 
-## UX Improvements
+* Design Max base and legs
+* Design Freek base
+* Design Swiper base
+* Design base level assets (tileset, walls, doodads)
+* Animate Freek Movement
+* Animate Max Hammer
+* Animate Max take damage
+* Animate Freek boarding Max
+* Animate Freek ejecting from Max
+* Animate Swiper movement, attack, and death animations
+
+AUDIO EFFECT WORK
+* Add battle music
+* Add menu music (?)
+* Add button interaction sounds
+
+UI Work
+* Implement GUI theme
+* Make main menu a little spiffier
+* Make Textured bars animate and be better
+
+Hammer UX Improvements
+* [Sun x] Hammer should have a windup "charge" animation
+* [Sun x] Hammer should wind down
+* [Sun x] Enemies should be knocked back
+* Tune screen shake
+* Body should lurch backwards when hammer activates
+
+Camera UX Improvements
 
 * Camera should _lead_ Freek
 * Camera on Max should lead him so he's looking ahead, not center
 
-
-## ASSETS
-
-Add Max movement ani
-Add Freek movement animation

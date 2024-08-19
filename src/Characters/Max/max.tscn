@@ -97,6 +97,9 @@ pitch_scale = 0.85
 unique_name_in_owner = true
 script = ExtResource("6_qciws")
 
+[node name="Move_Unpowered" type="Node" parent="MovementState"]
+script = ExtResource("10_f18k6")
+
 [node name="Move_Idle" type="Node" parent="MovementState"]
 script = ExtResource("7_n808q")
 
@@ -109,14 +112,14 @@ script = ExtResource("9_ser34")
 [node name="Move_Windup" type="Node" parent="MovementState"]
 script = ExtResource("10_bmamo")
 
-[node name="Move_Unpowered" type="Node" parent="MovementState"]
-script = ExtResource("10_f18k6")
-
 [node name="Move_Die" type="Node" parent="MovementState"]
 script = ExtResource("11_1ovke")
 
 [node name="HammerState" type="Node" parent="."]
 script = ExtResource("6_qciws")
+
+[node name="Unpowered" type="Node" parent="HammerState"]
+script = ExtResource("17_pued2")
 
 [node name="Idle" type="Node" parent="HammerState"]
 script = ExtResource("14_ljfqt")
@@ -126,9 +129,6 @@ script = ExtResource("15_dmuc1")
 
 [node name="Charging" type="Node" parent="HammerState"]
 script = ExtResource("16_y5amj")
-
-[node name="Unpowered" type="Node" parent="HammerState"]
-script = ExtResource("17_pued2")
 
 [node name="Actuating" type="Node" parent="HammerState"]
 script = ExtResource("18_4esov")

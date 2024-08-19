@@ -21,9 +21,11 @@ func _process(_delta: float) -> void:
 		_pause_panel.show()
 
 	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:
+		_eject_button.text = "Eject"
 		_eject_button.disabled = false
 		_eject_button.show()
 	if PlayerState.current_pilot_state == Enums.PilotState.Ejected:
+		_eject_button.text = "Pilot"
 		if PlayerState.is_freek_near_max:
 			_eject_button.disabled = false
 			_eject_button.show()

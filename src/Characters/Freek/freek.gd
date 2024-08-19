@@ -6,6 +6,9 @@ class_name Freek extends CharacterBody2D
 @warning_ignore("unused_private_class_variable")
 @onready var _freek_camera: Camera2D = %FreekCamera
 
+@warning_ignore("unused_private_class_variable")
+@onready var _collision_body: CollisionShape2D = %collision_body
+
 func _ready() -> void:
 	add_to_group("freek")
 
