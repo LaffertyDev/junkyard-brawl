@@ -84,7 +84,7 @@
 * [Tue x] BUG: Enemies will constantly follow FREEK if he boards MAX and not reacquire a target
 * [Tue x] BUG: IF max dies, the mechs will swarm him because they won't retarget if a node is dead but is otherwise valid
 * [Tue x] Add freek move track
-
+* [Tue x] BUG: Hammer does not hit enemy multiple time
 
 
 ACTIVE BUGS:
@@ -94,7 +94,6 @@ YOU FOUND A BUG.
 * A timer or other delayed execution task will resume executing.
 * So you need to check if the current state is still active whenever a delayed task comes about.
 
-* BUG: Hammer does not hit enemy multiple time
 * BUG: Animation connections in the state tree will replay and error out
 * BUG: At least on macos, Godot4 has a weird audio popping sound
 

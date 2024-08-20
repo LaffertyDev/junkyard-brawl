@@ -1,5 +1,7 @@
 # Design
 
+This is mostly just some mad scribblings.
+
 ## MVP
 
 * Max and Freak fully realized
@@ -14,6 +16,12 @@
 ## Colour Palette
 
 * https://www.inquirer.com/resizer/YmSf7Tno53k6Zy7PEQwjyLkpAGs=/760x507/smart/filters:format(webp)/arc-anglerfish-arc2-prod-pmn.s3.amazonaws.com/public/5XQ3LMMGUBHPROYKY4RRT33HQU.jpg
+* https://cdna.artstation.com/p/assets/images/images/059/820/900/original/edoardo-zuliani-update-reset-162-export.gif?1677198840
+
+Browns
+Grays
+Blues
+Orange
 
 ## Camera Design
 
