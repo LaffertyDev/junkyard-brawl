@@ -18,4 +18,5 @@ func physics_update(delta: float) -> void:
 
 func on_animation_die_complete() -> void:
 	swiper_instance.spawn_pickup()
+	PlayerState.mechs_destroyed += 1
 	swiper_instance.queue_free()

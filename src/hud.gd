@@ -14,6 +14,7 @@ class_name HUD extends Control
 @onready var _button_eject: Button = %button_eject
 @onready var _button_pilot: Button = %button_pilot
 @onready var _button_heal: Button = %button_heal
+@onready var _label_score: Label = %score_label
 
 var ui_tween: Tween
 
@@ -25,6 +26,7 @@ func _process(_delta: float) -> void:
 	_max_health.value = PlayerState.max_current_health
 	_freek_health.max_value = PlayerState.freek_maximum_health
 	_freek_health.value = PlayerState.freek_current_health
+	_label_score.text = "Mechs Junked: %s" % PlayerState.mechs_destroyed 
 	
 	if Input.is_action_just_pressed("pause_game"):
 		get_tree().paused = true

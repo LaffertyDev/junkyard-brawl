@@ -102,13 +102,14 @@ step = 1.0
 value = 100.0
 show_percentage = false
 
-[node name="LabelScore" type="Label" parent="GuiPanelMargin/HBoxContainer"]
-visible = false
+[node name="score_label" type="Label" parent="GuiPanelMargin/HBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-text = "Wave: 9000"
+text = "Mechs Junked: 9000"
 horizontal_alignment = 2
+vertical_alignment = 1
 
 [node name="Control" type="Control" parent="GuiPanelMargin"]
 visible = false

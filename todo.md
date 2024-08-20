@@ -62,21 +62,26 @@
 * [Sun x] Enemies should be knocked back
 * [Mon x] Implement GUI theme
 * [Mon x] Make main menu a little spiffier
+* [Mon x] Design Freek base
+* [Mon x] Animate Freek Movement
 
-ASSET TODO
+TUESDAY -- WHAT DO YOU NEED TO DO?
 
-* Design Freek base
-* Design base level assets (tileset, walls, doodads)
-* Animate Freek Movement
-* Animate Max take damage
-* Animate Freek boarding Max
-* Animate Freek ejecting from Max
+
 * Design and build Build arena
 	(How do enemies spawn? What is your player goal?)
+
 * Design and build how enemies spawn in the arena and fight
+
 * Design win condition
+
 * Build win condition
-* Iterate on some progression
+
+1. Finalize the arena scene visuals
+2. Animate max take damage
+
+* Design base level assets (tileset, walls, doodads)
+* Animate Max take damage
 
 AUDIO EFFECT WORK
 * Add button interaction sounds
@@ -110,6 +115,11 @@ EMILY NOTES:
 
 
 ### Discard Improvements
+
+Ejection:
+
+* Animate Freek boarding Max
+* Animate Freek ejecting from Max
 
 Camera UX Improvements
 
