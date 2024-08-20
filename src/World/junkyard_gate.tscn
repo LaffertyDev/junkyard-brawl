@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6o02co8ac886"]
+
+[ext_resource type="Script" path="res://src/World/junkyard_gate.gd" id="1_2p0rm"]
+[ext_resource type="Texture2D" uid="uid://ciu4umxcn0q0g" path="res://src/World/junkyard_gate_closed.png" id="1_p2cy4"]
+[ext_resource type="Texture2D" uid="uid://85t3w0ajqfbh" path="res://src/World/junkyard_gate_open.png" id="2_0xki0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlhe0"]
+size = Vector2(190, 30)
+
+[node name="JunkyardGate" type="StaticBody2D"]
+collision_layer = 2049
+script = ExtResource("1_2p0rm")
+
+[node name="closed" type="Sprite2D" parent="."]
+texture = ExtResource("1_p2cy4")
+
+[node name="open" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_0xki0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nlhe0")

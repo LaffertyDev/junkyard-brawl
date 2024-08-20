@@ -1,0 +1,30 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bv6uli0lfhm78"]
+
+[ext_resource type="Texture2D" uid="uid://d0syffb3vc34j" path="res://src/Enemies/JunkyardKing/bullet_sprite.png" id="1_7lj8w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a43ck"]
+atlas = ExtResource("1_7lj8w")
+region = Rect2(0, 0, 32, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i2g0o"]
+atlas = ExtResource("1_7lj8w")
+region = Rect2(32, 0, 32, 200)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a43ck")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i2g0o")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 20.0
+}]

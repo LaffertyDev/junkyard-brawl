@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://btutvf1fatmwy"]
+[gd_scene load_steps=11 format=3 uid="uid://btutvf1fatmwy"]
 
 [ext_resource type="Script" path="res://src/game.gd" id="1_5h0ui"]
 [ext_resource type="PackedScene" uid="uid://8d0tvl7vuu6" path="res://src/Arena.tscn" id="1_len5e"]
@@ -9,11 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://k3pncah0uhq7" path="res://src/Enemies/Swiper/swiper.tscn" id="6_6e0x7"]
 [ext_resource type="PackedScene" uid="uid://bp2tjesipajy6" path="res://src/Enemies/Spawner/spawner.tscn" id="7_i1o7u"]
 [ext_resource type="PackedScene" uid="uid://dult7lwpl1pyv" path="res://src/Pickups/health_pickup.tscn" id="9_jxf43"]
+[ext_resource type="PackedScene" uid="uid://dtqk53x1p3g15" path="res://src/Enemies/JunkyardKing/junkyard_king.tscn" id="10_lumf2"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_5h0ui")
 
 [node name="World" parent="." instance=ExtResource("2_jhqfn")]
+metadata/_edit_lock_ = true
 
 [node name="Arena" parent="." instance=ExtResource("1_len5e")]
 visible = false
@@ -22,18 +24,24 @@ visible = false
 position = Vector2(0, 541)
 
 [node name="Freek" parent="." instance=ExtResource("2_px2hi")]
-position = Vector2(-5, 1678)
+position = Vector2(-1, 1655)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("4_5g130")]
 unique_name_in_owner = true
 
-[node name="Swiper" parent="." instance=ExtResource("6_6e0x7")]
-position = Vector2(-1, 1196)
+[node name="level_one_swiper" parent="." instance=ExtResource("6_6e0x7")]
+position = Vector2(-5, 0)
 
-[node name="Spawner" parent="." instance=ExtResource("7_i1o7u")]
-position = Vector2(1, -183)
+[node name="level_two_swiper" parent="." instance=ExtResource("6_6e0x7")]
+position = Vector2(-280, -530)
+
+[node name="level_two_swiper2" parent="." instance=ExtResource("6_6e0x7")]
+position = Vector2(132, -534)
+
+[node name="level_two_swiper3" parent="." instance=ExtResource("6_6e0x7")]
+position = Vector2(-63, -670)
 
 [node name="HealthPickup" parent="." instance=ExtResource("9_jxf43")]
 position = Vector2(-177, 401)
@@ -43,3 +51,35 @@ position = Vector2(-177, 424)
 
 [node name="HealthPickup3" parent="." instance=ExtResource("9_jxf43")]
 position = Vector2(-178, 448)
+
+[node name="Spawner2" parent="." instance=ExtResource("7_i1o7u")]
+position = Vector2(816, -1035)
+
+[node name="Spawner4" parent="." instance=ExtResource("7_i1o7u")]
+position = Vector2(444, -937)
+rotation = 3.14159
+
+[node name="Spawner3" parent="." instance=ExtResource("7_i1o7u")]
+position = Vector2(686, -478)
+
+[node name="swiper" parent="." instance=ExtResource("6_6e0x7")]
+position = Vector2(636, -977)
+
+[node name="swiper2" parent="." instance=ExtResource("6_6e0x7")]
+position = Vector2(570, -964)
+
+[node name="swiper3" parent="." instance=ExtResource("6_6e0x7")]
+position = Vector2(652, -473)
+
+[node name="Spawner5" parent="." instance=ExtResource("7_i1o7u")]
+position = Vector2(310, -1542)
+
+[node name="Spawner" parent="." instance=ExtResource("7_i1o7u")]
+position = Vector2(-6, -1676)
+rotation = -1.5708
+
+[node name="JunkyardKing" parent="." instance=ExtResource("10_lumf2")]
+position = Vector2(102, -1404)
+
+[node name="swiper4" parent="." instance=ExtResource("6_6e0x7")]
+position = Vector2(70, -1139)

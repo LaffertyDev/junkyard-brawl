@@ -1,11 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp2tjesipajy6"]
+[gd_scene load_steps=5 format=3 uid="uid://bp2tjesipajy6"]
 
 [ext_resource type="Script" path="res://src/Enemies/Spawner/spawner.gd" id="1_olxsp"]
+[ext_resource type="SpriteFrames" uid="uid://1xff3xa75yde" path="res://src/Enemies/Spawner/spawner_sprites.tres" id="2_2bqor"]
 
-[node name="Spawner" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x8vbg"]
+size = Vector2(128, 128)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b48fu"]
+radius = 300.0
+
+[node name="Spawner" type="Area2D"]
+collision_layer = 2048
+collision_mask = 0
 script = ExtResource("1_olxsp")
 
-[node name="spawn_timer" type="Timer" parent="."]
-autostart = true
+[node name="animation" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = ExtResource("2_2bqor")
+animation = &"spawn"
 
-[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_x8vbg")
+
+[node name="activate_radius" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="activate_radius"]
+shape = SubResource("CircleShape2D_b48fu")
+
+[connection signal="animation_finished" from="animation" to="." method="_on_sprite_2d_animation_finished"]
+[connection signal="animation_looped" from="animation" to="." method="_on_sprite_2d_animation_looped"]
+[connection signal="area_shape_entered" from="activate_radius" to="." method="_on_activate_radius_area_shape_entered"]
+[connection signal="body_entered" from="activate_radius" to="." method="_on_activate_radius_body_entered"]

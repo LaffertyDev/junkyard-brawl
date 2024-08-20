@@ -2,6 +2,7 @@ extends FreekState
 
 func enter(_previous_state_path: String, _data := {}) -> void:
 	freek_player.hide()
+	freek_player.position.x = -9000
 	freek_player._freek_camera.enabled = false
 	freek_player._collision_body.disabled = true
 
@@ -18,3 +19,5 @@ func exit():
 	var max_node = get_tree().get_nodes_in_group("max")[0]
 	freek_player.position = max_node.position
 	freek_player.position.y += 60
+	freek_player._freek_camera.position = Vector2(0,0)
+	freek_player._freek_camera.enabled = true

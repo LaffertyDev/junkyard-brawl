@@ -30,7 +30,7 @@ func take_damage(damage: int) -> void:
 	%StateMachine.send_message_to_state("TakeDamage")
 
 func spawn_pickup() -> void:
-	if rng.randi_range(0, 100) < 10:
+	if rng.randi_range(0, 100) < 20:
 		var health_pick_instance = health_pick_scene.instantiate()
 		health_pick_instance.position = self.position
 		game_scene.add_child(health_pick_instance)

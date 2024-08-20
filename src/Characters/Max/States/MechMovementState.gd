@@ -8,7 +8,7 @@ const MOVE_UNPOWERED = "Move_Unpowered"
 const MOVE_WINDUP = "Move_Windup"
 
 # how far a leg will attempt to move
-const LEG_MOVEMENT_SPEED: int = 40
+const LEG_MOVEMENT_SPEED: int = 60
 
 var max_player: Max
 

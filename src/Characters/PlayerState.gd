@@ -10,6 +10,9 @@ var freek_maximum_health: int
 var max_current_health: int
 var max_maximum_health: int
 
+var junkyard_king_health: int
+var junkyard_king_max_health: int
+
 var freek_hold_status: Enums.FreekItemHeld
 
 var mechs_destroyed: int
@@ -23,6 +26,8 @@ func Initialize() -> void:
 	current_pilot_state = Enums.PilotState.Ejected
 	freek_hold_status = Enums.FreekItemHeld.Nothing
 	mechs_destroyed = 0
+	junkyard_king_health = 5
+	junkyard_king_max_health = 5
 
 func SetPilotState(state_to_be: Enums.PilotState) -> void:
 	current_pilot_state = state_to_be

@@ -71,6 +71,22 @@ TUESDAY -- WHAT DO YOU NEED TO DO?
 * Design and build Build arena
 	(How do enemies spawn? What is your player goal?)
 
+IDEAS:
+
+GLADIATOR FIGHTS
+
+* Design five rooms
+* Put mechs in the rooms that activate when the round starts
+* Round starts after you destroy that rooms gate
+* From there, if I have time, make a boss and a win screen
+
+
+How do I make this thing fun?
+
+* Update game rate button to point to GMTK listing
+
+* IF max dies, the mechs will swarm him because they won't retarget if a node is dead but is otherwise valid
+
 * Design and build how enemies spawn in the arena and fight
 
 * Design win condition
@@ -93,7 +109,7 @@ AUDIO EFFECT WORK
 * Add pilot button sound
 
 UI Work
-* Make Textured bars animate and be better
+* Make Textured bars animate and be better 
 
 ACTIVE BUGS:
 
@@ -103,7 +119,6 @@ YOU FOUND A BUG.
 * So you need to check if the current state is still active whenever a delayed task comes about.
 
 * BUG: Hammer does not hit enemy multiple time
-* BUG: Swiper cooldown is too fast. It needs like a 0.25 or 0.5 cooldown.
 * BUG: Enemies will constantly follow FREEK if he boards MAX and not reacquire a target
 * BUG: Animation connections in the state tree will replay and error out
 * BUG: At least on macos, Godot4 has a weird audio popping sound

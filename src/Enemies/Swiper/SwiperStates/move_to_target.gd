@@ -16,6 +16,8 @@ func physics_update(delta: float) -> void:
 		finished.emit(IDLE)
 		return
 		
+	# BUG: if target is dead, retarget
+		
 	# rotate the sprite to always face target
 	var angle_to = swiper_instance.position.angle_to_point(target.position)
 	var octant = int(round( 8 * angle_to / (2*PI) + 8 )) % 8;

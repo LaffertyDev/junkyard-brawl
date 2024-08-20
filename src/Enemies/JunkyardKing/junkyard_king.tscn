@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://dtqk53x1p3g15"]
+
+[ext_resource type="Script" path="res://src/Enemies/JunkyardKing/junkyard_king.gd" id="1_atvvx"]
+[ext_resource type="SpriteFrames" uid="uid://cp1vg2r1gvebf" path="res://src/Enemies/JunkyardKing/junkyard_king_torso_frames.tres" id="2_3jq2h"]
+[ext_resource type="SpriteFrames" uid="uid://ecd6f0gi1an7" path="res://src/Enemies/JunkyardKing/junkyard_king_gun.tres" id="2_cun45"]
+[ext_resource type="SpriteFrames" uid="uid://bv6uli0lfhm78" path="res://src/Enemies/JunkyardKing/bullet_animation.tres" id="4_xpr2b"]
+[ext_resource type="AudioStream" uid="uid://caru2dsjl4ukr" path="res://src/Enemies/JunkyardKing/a_34p_trimmed.wav" id="5_bco55"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1v7mq"]
+size = Vector2(32, 253)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gr1bo"]
+radius = 250.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gdpgr"]
+radius = 39.0
+height = 82.0
+
+[node name="JunkyardKing" type="Area2D"]
+collision_layer = 2049
+script = ExtResource("1_atvvx")
+
+[node name="torso" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = ExtResource("2_3jq2h")
+
+[node name="attack_ray" type="Area2D" parent="torso"]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="torso/attack_ray"]
+position = Vector2(-3, -127.5)
+shape = SubResource("RectangleShape2D_1v7mq")
+
+[node name="bullet_anim" type="AnimatedSprite2D" parent="torso"]
+unique_name_in_owner = true
+position = Vector2(-3, -153)
+sprite_frames = ExtResource("4_xpr2b")
+
+[node name="gun" type="AnimatedSprite2D" parent="torso"]
+unique_name_in_owner = true
+position = Vector2(-29, -41)
+sprite_frames = ExtResource("2_cun45")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="attack_range" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack_range"]
+shape = SubResource("CircleShape2D_gr1bo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-6, -7)
+shape = SubResource("CapsuleShape2D_gdpgr")
+
+[node name="gun_sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_bco55")
+pitch_scale = 0.8
+
+[connection signal="animation_finished" from="torso" to="." method="_on_torso_animation_finished"]
+[connection signal="body_entered" from="torso/attack_ray" to="." method="_on_attack_ray_body_entered"]
+[connection signal="animation_finished" from="torso/bullet_anim" to="." method="_on_bullet_anim_animation_finished"]
+[connection signal="animation_finished" from="torso/gun" to="." method="_on_gun_animation_finished"]
+[connection signal="animation_looped" from="torso/gun" to="." method="_on_gun_animation_looped"]
