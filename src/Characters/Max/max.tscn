@@ -1,8 +1,8 @@
-[gd_scene load_steps=23 format=3 uid="uid://c7rfvjpqsmeb8"]
+[gd_scene load_steps=22 format=3 uid="uid://c7rfvjpqsmeb8"]
 
 [ext_resource type="Script" path="res://src/Characters/Max/max.gd" id="1_enr7n"]
-[ext_resource type="Texture2D" uid="uid://brcocx6q6doft" path="res://src/Characters/Max/max_torso.png" id="2_u1ccp"]
 [ext_resource type="Texture2D" uid="uid://bmy80gftuxvjt" path="res://src/Characters/Max/max_leg.png" id="3_68rjg"]
+[ext_resource type="SpriteFrames" uid="uid://byheomnss3n0s" path="res://src/Characters/Max/max_torso_frames.tres" id="3_irnea"]
 [ext_resource type="AudioStream" uid="uid://83m6e7s6ch7v" path="res://src/Characters/Max/bang_short.ogg" id="5_0yqge"]
 [ext_resource type="SpriteFrames" uid="uid://cajnowuwd4by5" path="res://src/Characters/Max/max_hammer_sprite_frames.tres" id="5_wybb3"]
 [ext_resource type="AudioStream" uid="uid://o1hjs61v3dgd" path="res://src/Characters/Max/gear_spinning_loop.mp3" id="6_5pobk"]
@@ -24,8 +24,6 @@
 radius = 32.0
 height = 100.0
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rl2ex"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwxcy"]
 size = Vector2(32, 91)
 
@@ -35,10 +33,6 @@ script = ExtResource("1_enr7n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_gbgva")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
-texture = SubResource("CompressedTexture2D_rl2ex")
 
 [node name="leg_bottom_left" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -60,9 +54,9 @@ unique_name_in_owner = true
 position = Vector2(28, -28)
 texture = ExtResource("3_68rjg")
 
-[node name="max_torso" type="Sprite2D" parent="."]
+[node name="max_torso" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
-texture = ExtResource("2_u1ccp")
+sprite_frames = ExtResource("3_irnea")
 
 [node name="max_hammer" type="AnimatedSprite2D" parent="max_torso"]
 unique_name_in_owner = true
@@ -138,3 +132,5 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 stream = ExtResource("19_qsdxq")
 volume_db = -20.0
+
+[connection signal="animation_finished" from="max_torso" to="." method="_on_max_torso_animation_finished"]

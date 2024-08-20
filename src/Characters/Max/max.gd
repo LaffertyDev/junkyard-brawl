@@ -10,7 +10,7 @@ class_name Max extends CharacterBody2D
 @onready var _leg_top_right: Node2D = %leg_top_right
 @warning_ignore("unused_private_class_variable")
 @onready var _max_camera: Camera2D = %MaxCamera
-@onready var _torso: Node2D = %max_torso
+@onready var _torso: AnimatedSprite2D = %max_torso
 @warning_ignore("unused_private_class_variable")
 @onready var _hammer: AnimatedSprite2D = %max_hammer
 @warning_ignore("unused_private_class_variable")
@@ -49,6 +49,7 @@ func _physics_process(delta: float) -> void:
 		stop_rotating()
 
 func take_damage(damage: int) -> void:
+	_torso.play("take_damage")
 	PlayerState.max_current_health -= damage
 	if PlayerState.max_current_health <= 0:
 		%MovementState.send_message_to_state("Die")
@@ -69,3 +70,8 @@ func stop_rotating() -> void:
 			audio_tween = get_tree().create_tween()
 			audio_tween.tween_property(_rotation_sound, "volume_db", -40, 0.25)
 			audio_tween.tween_callback(_rotation_sound.stop)
+
+
+func _on_max_torso_animation_finished() -> void:
+	_torso.play("default")
+	pass # Replace with function body.
