@@ -57,19 +57,11 @@ Make Freek Useful:
 * [Mon x] MAX cannot die, he can always be repaired by freek
 * BUG: Enemies will constantly follow FREEK if he boards MAX and not reacquire a target
 
-Max Movement UX Improvements
-* Add sound for foot windup
-* Add sound for when a foot "slams" down
-* Fix pixel jitter when max body is moving
-
 GAME FEEL
 * Enemies should have more than 1 hp
 * Enemies should spawn slowly
 * [Mon x] Make MAX move a little faster
 * Add pickup attachments for Freek to give to Max? (A gun would be pretty lit.)
-
-
-* Freek takes damage if he gets stepped on or touches a robot and slides back from the direction of the robot
 
 GAMEPLAY TODO
 * [Mon x] Design and build tutorial and starting area
@@ -83,18 +75,17 @@ ASSET TODO
 
 * Design Max base and legs
 * Design Freek base
-* Design Swiper base
 * Design base level assets (tileset, walls, doodads)
 * Animate Freek Movement
 * Animate Max Hammer
 * Animate Max take damage
 * Animate Freek boarding Max
 * Animate Freek ejecting from Max
-* Animate Swiper movement, attack, and death animations
+
+* [Mon x] Design Swiper base
+* [Mon x] Animate Swiper movement, attack, and death animations
 
 AUDIO EFFECT WORK
-* Add battle music
-* Add menu music (?)
 * Add button interaction sounds
 
 UI Work

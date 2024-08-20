@@ -26,7 +26,7 @@ height = 100.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rl2ex"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hwxcy"]
-size = Vector2(32, 65)
+size = Vector2(32, 91)
 
 [node name="max" type="CharacterBody2D"]
 collision_layer = 32897
@@ -81,7 +81,7 @@ collision_layer = 0
 collision_mask = 2048
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="max_torso/max_hammer/AttackDamageScanArea"]
-position = Vector2(0, -21.5)
+position = Vector2(0, -34.5)
 shape = SubResource("RectangleShape2D_hwxcy")
 
 [node name="audio_torso_rotate" type="AudioStreamPlayer" parent="max_torso"]
