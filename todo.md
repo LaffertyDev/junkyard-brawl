@@ -60,6 +60,8 @@
 * [Mon x] Design Max base and legs
 * [Mon x] Animate Max Hammer
 * [Sun x] Enemies should be knocked back
+* [Mon x] Implement GUI theme
+* [Mon x] Make main menu a little spiffier
 
 ASSET TODO
 
@@ -86,8 +88,6 @@ AUDIO EFFECT WORK
 * Add pilot button sound
 
 UI Work
-* Implement GUI theme
-* Make main menu a little spiffier
 * Make Textured bars animate and be better
 
 ACTIVE BUGS:
@@ -98,9 +98,10 @@ YOU FOUND A BUG.
 * So you need to check if the current state is still active whenever a delayed task comes about.
 
 * BUG: Hammer does not hit enemy multiple time
-* BUG: Swiper cooldown is too fast. It needs like a 0.25 or 0.5 cooldown
+* BUG: Swiper cooldown is too fast. It needs like a 0.25 or 0.5 cooldown.
 * BUG: Enemies will constantly follow FREEK if he boards MAX and not reacquire a target
 * BUG: Animation connections in the state tree will replay and error out
+* BUG: At least on macos, Godot4 has a weird audio popping sound
 
 EMILY NOTES:
 
