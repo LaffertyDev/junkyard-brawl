@@ -121,3 +121,9 @@ YOU FOUND A BUG.
 * State system with timers breaks the model of the state system.
 * A timer or other delayed execution task will resume executing.
 * So you need to check if the current state is still active whenever a delayed task comes about.
+
+
+EMILY NOTES:
+
+* Repair wrench does not perfectly insinuate "Heal Max" visually
+* Max icon is not obvious its supposed to be a camera

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjqllgdvs036y"]
+
+[ext_resource type="Script" path="res://src/Enemies/Swiper/SwiperStates/take_damage.gd" id="1_nb0qx"]
+
+[node name="TakeDamage" type="Node"]
+script = ExtResource("1_nb0qx")

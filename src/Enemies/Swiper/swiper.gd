@@ -4,10 +4,13 @@ class_name Swiper extends Area2D
 @onready var _enemy_finder: Area2D = %EnemyFinder
 
 @warning_ignore("unused_private_class_variable")
+@onready var _attack_radius: Area2D = %attack_radius
+
+@warning_ignore("unused_private_class_variable")
 @onready var _swiper_sprites: AnimatedSprite2D = $AnimatedSprite2D
 
-var current_health = 1
-var maximum_health = 1
+var current_health = 2
+var maximum_health = 2
 
 var health_pick_scene = preload("res://src/Pickups/health_pickup.tscn")
 var game_scene: GameScene
@@ -24,6 +27,7 @@ func _ready() -> void:
 	
 func take_damage(damage: int) -> void:
 	current_health -= damage
+	%StateMachine.send_message_to_state("TakeDamage")
 
 func spawn_pickup() -> void:
 	if rng.randi_range(0, 100) < 10:

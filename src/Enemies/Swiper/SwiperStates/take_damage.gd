@@ -4,7 +4,11 @@ var angle_to_move: float
 var death_velocity: float = 150
 
 func enter(_previous_state_path: String, _data := {}) -> void:
-	swiper_instance._swiper_sprites.play("die")
+	if swiper_instance.current_health == 0:
+		finished.emit(DIE)
+		return
+
+	swiper_instance._swiper_sprites.play("take_damage")
 	swiper_instance._swiper_sprites.animation_finished.connect(on_animation_complete, CONNECT_ONE_SHOT)
 
 	# add a force in the direction of Max and whatever killed me
@@ -17,5 +21,4 @@ func physics_update(delta: float) -> void:
 	death_velocity = death_velocity * (1.0 - delta * 4.0)
 
 func on_animation_complete() -> void:
-	swiper_instance.spawn_pickup()
-	swiper_instance.queue_free()
+	finished.emit(IDLE)
