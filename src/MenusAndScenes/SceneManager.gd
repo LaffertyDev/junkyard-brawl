@@ -15,6 +15,6 @@ func change_scene_to_defeat():
 
 func load_gamejam_rating_portal():
 	if OS.get_name() == "Web":
-		JavaScriptBridge.eval("window.open('https://itch.io/jam/gmtk-2023/rate/2151378', '_blank').focus();")
+		JavaScriptBridge.eval("window.open('https://itch.io/jam/gmtk-2024/rate/2906939', '_blank').focus();")
 	else:
-		OS.shell_open("https://itch.io/jam/gmtk-2023/rate/2151378")
+		OS.shell_open("https://itch.io/jam/gmtk-2024/rate/2906939")
