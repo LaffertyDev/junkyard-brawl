@@ -14,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_671ur")
 script = ExtResource("1_cutv6")
 
 [node name="Left_Pillarbox" type="Panel" parent="."]
@@ -137,7 +138,6 @@ layout_mode = 2
 
 [node name="button_eject" type="Button" parent="GuiPanelMargin/Control2"]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -222,22 +222,48 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="button_unpause" type="Button" parent="pause_panel"]
+[node name="VBoxContainer" type="VBoxContainer" parent="pause_panel"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+offset_left = -48.0
+offset_top = -74.0
+offset_right = 48.0
+offset_bottom = 74.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Press to Unpause"
+
+[node name="Label" type="Label" parent="pause_panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="button_unpause" type="Button" parent="pause_panel/VBoxContainer"]
+layout_mode = 2
+text = "Unpause"
+
+[node name="HSeparator" type="HSeparator" parent="pause_panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="button_rate_game" type="Button" parent="pause_panel/VBoxContainer"]
+layout_mode = 2
+text = "Rate My Game"
+
+[node name="HSeparator2" type="HSeparator" parent="pause_panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="button_exit_game" type="Button" parent="pause_panel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit Game"
 
 [connection signal="pressed" from="GuiPanelMargin/Control2/button_eject" to="." method="_on_button_eject_pressed"]
 [connection signal="pressed" from="GuiPanelMargin/Control2/button_pilot" to="." method="_on_button_pilot_pressed"]
 [connection signal="pressed" from="GuiPanelMargin/Control2/button_heal" to="." method="_on_button_heal_pressed"]
-[connection signal="pressed" from="pause_panel/button_unpause" to="." method="_on_unpause_pressed"]
+[connection signal="pressed" from="pause_panel/VBoxContainer/button_unpause" to="." method="_on_unpause_pressed"]
+[connection signal="pressed" from="pause_panel/VBoxContainer/button_rate_game" to="." method="_on_button_rate_game_pressed"]
+[connection signal="pressed" from="pause_panel/VBoxContainer/button_exit_game" to="." method="_on_button_exit_game_pressed"]

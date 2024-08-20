@@ -17,6 +17,9 @@ class_name HUD extends Control
 
 var ui_tween: Tween
 
+func _ready() -> void:
+	%button_exit_game.visible = OS.get_name() != "Web"
+
 func _process(_delta: float) -> void:
 	_max_health.max_value = PlayerState.max_maximum_health
 	_max_health.value = PlayerState.max_current_health
@@ -87,7 +90,6 @@ func _on_unpause_pressed() -> void:
 	_pause_panel.hide()
 	get_tree().paused = false
 
-
 func _on_button_heal_pressed() -> void:
 	const repair_amount = 10
 	PlayerState.max_current_health = min(PlayerState.max_maximum_health, PlayerState.max_current_health + repair_amount)
@@ -98,3 +100,9 @@ func _on_button_pilot_pressed() -> void:
 	PlayerState.SetPilotState(Enums.PilotState.Piloting)
 	animate_scene_swap(false)
 	_max_container.show()
+
+func _on_button_rate_game_pressed() -> void:
+	SceneManager.load_gamejam_rating_portal()
+
+func _on_button_exit_game_pressed() -> void:
+	get_tree().quit()

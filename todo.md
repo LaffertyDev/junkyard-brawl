@@ -46,65 +46,49 @@
 
 
 * [Mon x] Pick final game shape
-
 * [Mon x] Make Max and Freek icon sprites
-
-
-Make Freek Useful:
 * [Mon x] Add drop system (so enemies who die drop REPAIR TOKENS)
 * [Mon x] Enable Freek to carry a single item
 * [Mon x] If Freek boards max while carrying an item, he will consume it and use it
 * [Mon x] MAX cannot die, he can always be repaired by freek
-* BUG: Enemies will constantly follow FREEK if he boards MAX and not reacquire a target
-
-GAME FEEL
-* Enemies should have more than 1 hp
-* Enemies should spawn slowly
 * [Mon x] Make MAX move a little faster
-* Add pickup attachments for Freek to give to Max? (A gun would be pretty lit.)
-
-GAMEPLAY TODO
 * [Mon x] Design and build tutorial and starting area
+* [Mon x] Design Swiper base
+* [Mon x] Animate Swiper movement, attack, and death animations
+* [Sun x] Hammer should have a windup "charge" animation
+* [Sun x] Hammer should wind down
+* [Mon x] Design Max base and legs
+* [Mon x] Animate Max Hammer
+* [Sun x] Enemies should be knocked back
+
+ASSET TODO
+
+* Design Freek base
+* Design base level assets (tileset, walls, doodads)
+* Animate Freek Movement
+* Animate Max take damage
+* Animate Freek boarding Max
+* Animate Freek ejecting from Max
 * Design and build Build arena
 	(How do enemies spawn? What is your player goal?)
+* Design and build how enemies spawn in the arena and fight
 * Design win condition
 * Build win condition
 * Iterate on some progression
 
-ASSET TODO
-
-* Design Max base and legs
-* Design Freek base
-* Design base level assets (tileset, walls, doodads)
-* Animate Freek Movement
-* Animate Max Hammer
-* Animate Max take damage
-* Animate Freek boarding Max
-* Animate Freek ejecting from Max
-
-* [Mon x] Design Swiper base
-* [Mon x] Animate Swiper movement, attack, and death animations
-
 AUDIO EFFECT WORK
 * Add button interaction sounds
+* Add swiper attack track
+* Add freek move track
+* Add engine hum when in Max (does the rotation count?)
+* Add swiper move track
+* Add eject button sound
+* Add pilot button sound
 
 UI Work
 * Implement GUI theme
 * Make main menu a little spiffier
 * Make Textured bars animate and be better
-
-Hammer UX Improvements
-* [Sun x] Hammer should have a windup "charge" animation
-* [Sun x] Hammer should wind down
-* [Sun x] Enemies should be knocked back
-* Tune screen shake
-* Body should lurch backwards when hammer activates
-
-Camera UX Improvements
-
-* Camera should _lead_ Freek
-* Camera on Max should lead him so he's looking ahead, not center
-
 
 ACTIVE BUGS:
 
@@ -113,8 +97,22 @@ YOU FOUND A BUG.
 * A timer or other delayed execution task will resume executing.
 * So you need to check if the current state is still active whenever a delayed task comes about.
 
+* BUG: Hammer does not hit enemy multiple time
+* BUG: Swiper cooldown is too fast. It needs like a 0.25 or 0.5 cooldown
+* BUG: Enemies will constantly follow FREEK if he boards MAX and not reacquire a target
+* BUG: Animation connections in the state tree will replay and error out
 
 EMILY NOTES:
 
 * Repair wrench does not perfectly insinuate "Heal Max" visually
 * Max icon is not obvious its supposed to be a camera
+
+
+### Discard Improvements
+
+Camera UX Improvements
+
+* Camera should _lead_ Freek
+* Camera on Max should lead him so he's looking ahead, not center
+* Tune screen shake
+* Body should lurch backwards when hammer activates
