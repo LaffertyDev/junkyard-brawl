@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://c7rfvjpqsmeb8"]
+[gd_scene load_steps=23 format=3 uid="uid://c7rfvjpqsmeb8"]
 
 [ext_resource type="Script" path="res://src/Characters/Max/max.gd" id="1_enr7n"]
 [ext_resource type="Texture2D" uid="uid://brcocx6q6doft" path="res://src/Characters/Max/max_torso.png" id="2_u1ccp"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" path="res://src/Characters/Max/States/hammer_state_charging.gd" id="16_y5amj"]
 [ext_resource type="Script" path="res://src/Characters/Max/States/hammer_state_unpowered.gd" id="17_pued2"]
 [ext_resource type="Script" path="res://src/Characters/Max/States/hammer_state_actuating.gd" id="18_4esov"]
+[ext_resource type="AudioStream" uid="uid://bkvabdte5hcn6" path="res://src/Characters/Max/engineCircular_004.ogg" id="19_qsdxq"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gbgva"]
 radius = 32.0
@@ -132,3 +133,8 @@ script = ExtResource("18_4esov")
 
 [node name="MaxCamera" type="Camera2D" parent="."]
 unique_name_in_owner = true
+
+[node name="engine_sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("19_qsdxq")
+volume_db = -20.0

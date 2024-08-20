@@ -16,6 +16,7 @@ class_name Max extends CharacterBody2D
 @warning_ignore("unused_private_class_variable")
 @onready var _hammer_sound: AudioStreamPlayer = %hammer_sound
 @onready var _rotation_sound: AudioStreamPlayer = %audio_torso_rotate
+@onready var _engine_sound: AudioStreamPlayer = %engine_sound
 @warning_ignore("unused_private_class_variable")
 @onready var _hammer_attack_damage_scan_area: Area2D = %AttackDamageScanArea
 
