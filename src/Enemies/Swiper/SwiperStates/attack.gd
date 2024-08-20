@@ -11,6 +11,7 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 func on_windup_complete() -> void:
 	if is_cancelled:
 		return
+	swiper_instance._attack_sound.play()
 	swiper_instance._swiper_sprites.play("attack")
 	swiper_instance._swiper_sprites.animation_finished.connect(on_attack_complete, CONNECT_ONE_SHOT)
 	var bodies = swiper_instance._attack_radius.get_overlapping_bodies()

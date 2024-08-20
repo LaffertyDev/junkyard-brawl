@@ -2,9 +2,12 @@ extends EnemyStateBase
 
 var target: Node2D
 
+var previous_pilot_state: Enums.PilotState
 func enter(_previous_state_path: String, data := {}) -> void:
 	target = data.target
 	swiper_instance._swiper_sprites.play("move")
+	swiper_instance._footstep_sounds.play()
+	previous_pilot_state = PlayerState.current_pilot_state
 
 func update(_delta: float) -> void:
 	if swiper_instance.current_health <= 0:
@@ -16,7 +19,9 @@ func physics_update(delta: float) -> void:
 		finished.emit(IDLE)
 		return
 		
-	# BUG: if target is dead, retarget
+	if previous_pilot_state != PlayerState.current_pilot_state:
+		finished.emit(IDLE)
+		return
 		
 	# rotate the sprite to always face target
 	var angle_to = swiper_instance.position.angle_to_point(target.position)
@@ -35,3 +40,6 @@ func physics_update(delta: float) -> void:
 func handle_receive_message(message: String, _data: Dictionary = {}) -> void:
 	if message == "TakeDamage":
 		finished.emit(TAKE_DAMAGE)
+
+func exit() -> void:
+	swiper_instance._footstep_sounds.stop()

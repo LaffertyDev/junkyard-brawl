@@ -65,51 +65,27 @@
 * [Mon x] Design Freek base
 * [Mon x] Animate Freek Movement
 
-TUESDAY -- WHAT DO YOU NEED TO DO?
+* [Tue x] Design and build Build arena
+* [Tue x] Design five rooms
+* [Tue x] Put mechs in the rooms that activate when the round starts
+* [Tue x] Round starts after you destroy that rooms gate
+* [Tue x] From there, if I have time, make a boss and a win screen
+* [Tue x] Update game rate button to point to GMTK listing
+* [Tue x] Design and build how enemies spawn in the arena and fight
+* [Tue x] Design win condition
+* [Tue x] Build win condition
+* [Tue x] Finalize the arena scene visuals
+* [Tue x] Animate max take damage
+* [Tue x] Add swiper attack track
+* [Tue x] Add engine hum when in Max (does the rotation count?)
+* [Tue x] Add swiper move track
+* [Tue x] Add eject button sound
+* [Tue x] Add pilot button sound
+* [Tue x] BUG: Enemies will constantly follow FREEK if he boards MAX and not reacquire a target
+* [Tue x] BUG: IF max dies, the mechs will swarm him because they won't retarget if a node is dead but is otherwise valid
+* [Tue x] Add freek move track
 
 
-* Design and build Build arena
-	(How do enemies spawn? What is your player goal?)
-
-IDEAS:
-
-GLADIATOR FIGHTS
-
-* Design five rooms
-* Put mechs in the rooms that activate when the round starts
-* Round starts after you destroy that rooms gate
-* From there, if I have time, make a boss and a win screen
-
-
-How do I make this thing fun?
-
-* Update game rate button to point to GMTK listing
-
-* IF max dies, the mechs will swarm him because they won't retarget if a node is dead but is otherwise valid
-
-* Design and build how enemies spawn in the arena and fight
-
-* Design win condition
-
-* Build win condition
-
-1. Finalize the arena scene visuals
-2. Animate max take damage
-
-* Design base level assets (tileset, walls, doodads)
-* Animate Max take damage
-
-AUDIO EFFECT WORK
-* Add button interaction sounds
-* Add swiper attack track
-* Add freek move track
-* Add engine hum when in Max (does the rotation count?)
-* Add swiper move track
-* Add eject button sound
-* Add pilot button sound
-
-UI Work
-* Make Textured bars animate and be better 
 
 ACTIVE BUGS:
 
@@ -119,7 +95,6 @@ YOU FOUND A BUG.
 * So you need to check if the current state is still active whenever a delayed task comes about.
 
 * BUG: Hammer does not hit enemy multiple time
-* BUG: Enemies will constantly follow FREEK if he boards MAX and not reacquire a target
 * BUG: Animation connections in the state tree will replay and error out
 * BUG: At least on macos, Godot4 has a weird audio popping sound
 
@@ -135,6 +110,12 @@ Ejection:
 
 * Animate Freek boarding Max
 * Animate Freek ejecting from Max
+
+AUDIO EFFECT WORK
+* Add button interaction sounds
+
+UI Work
+* Make Textured bars animate and be better 
 
 Camera UX Improvements
 

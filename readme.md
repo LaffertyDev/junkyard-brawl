@@ -71,7 +71,7 @@ https://itch.io/jam/gmtk-2024
 
 * "Bang Short": 3 Explosion Bangs Copyright 2012 Iwan 'qubodup' Gabovitch <http://qubodup.net>
 * Pixabay gear sounds (from Pixabay Profile)
-
+* Squirrel Sound: https://pixabay.com/users/floraphonic-38928062/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=188097
 
 ### Maybe List
 

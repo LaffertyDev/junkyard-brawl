@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://k3pncah0uhq7"]
+[gd_scene load_steps=15 format=3 uid="uid://k3pncah0uhq7"]
 
 [ext_resource type="Script" path="res://src/Enemies/Swiper/swiper.gd" id="1_fjl12"]
 [ext_resource type="SpriteFrames" uid="uid://csqseuu7m6e20" path="res://src/Enemies/Swiper/swiper_sprite_frames.tres" id="1_m0lsv"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://cxa4h4eq4kyxg" path="res://src/Enemies/Swiper/SwiperStates/attack.tscn" id="7_x4qls"]
 [ext_resource type="PackedScene" uid="uid://d2x4g07lt17fu" path="res://src/Enemies/Swiper/SwiperStates/die.tscn" id="8_i8dkn"]
 [ext_resource type="PackedScene" uid="uid://bjqllgdvs036y" path="res://src/Enemies/Swiper/SwiperStates/take_damage.tscn" id="9_ahefn"]
+[ext_resource type="AudioStream" uid="uid://dj23fuhyued4r" path="res://src/Enemies/Swiper/enemy_mech_footstep_sounds.mp3" id="10_t1vhb"]
+[ext_resource type="AudioStream" uid="uid://cib3vn7benpsx" path="res://src/Enemies/Swiper/knifeSlice2.ogg" id="11_orca0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_eglyf"]
 radius = 15.1327
@@ -64,3 +66,14 @@ script = ExtResource("2_pj146")
 [node name="Die" parent="StateMachine" instance=ExtResource("8_i8dkn")]
 
 [node name="TakeDamage" parent="StateMachine" instance=ExtResource("9_ahefn")]
+
+[node name="footstep_sounds" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_t1vhb")
+volume_db = -5.0
+
+[node name="attack_sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("11_orca0")
+volume_db = -15.0
+pitch_scale = 0.8

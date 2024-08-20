@@ -9,6 +9,12 @@ class_name Swiper extends Area2D
 @warning_ignore("unused_private_class_variable")
 @onready var _swiper_sprites: AnimatedSprite2D = $AnimatedSprite2D
 
+@warning_ignore("unused_private_class_variable")
+@onready var _footstep_sounds: AudioStreamPlayer = %footstep_sounds
+
+@warning_ignore("unused_private_class_variable")
+@onready var _attack_sound: AudioStreamPlayer = %attack_sound
+
 var current_health = 2
 var maximum_health = 2
 
@@ -30,7 +36,7 @@ func take_damage(damage: int) -> void:
 	%StateMachine.send_message_to_state("TakeDamage")
 
 func spawn_pickup() -> void:
-	if rng.randi_range(0, 100) < 20:
+	if rng.randi_range(0, 100) < 33:
 		var health_pick_instance = health_pick_scene.instantiate()
 		health_pick_instance.position = self.position
 		game_scene.add_child(health_pick_instance)

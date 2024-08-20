@@ -14,7 +14,7 @@ func enter(_previous_state_path: String, _data := {}) -> void:
 	movement_direction = Vector2(input_direction_x, input_direction_y)
 	var distance = movement_direction.normalized() * LEG_MOVEMENT_SPEED
 	
-	update_animation(0.5, distance)
+	update_animation(LEG_ANIMATION_DURATION, distance)
 
 func physics_update(_delta: float):
 	if not Input.is_action_pressed("move_forward") \

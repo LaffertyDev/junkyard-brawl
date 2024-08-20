@@ -1,6 +1,8 @@
 extends FreekState
 
 func enter(_previous_state_path: String, _data := {}) -> void:
+	freek_player._pilot_sound.play()
+	freek_player._freek_sprites.animation = "idle"
 	freek_player.hide()
 	freek_player.position.x = -9000
 	freek_player._freek_camera.enabled = false
@@ -15,6 +17,7 @@ func handle_receive_message(message: String, _data: Dictionary = {}) -> void:
 		finished.emit(DIE)
 		
 func exit():
+	freek_player._eject_sound.play()
 	freek_player.show()
 	var max_node = get_tree().get_nodes_in_group("max")[0]
 	freek_player.position = max_node.position

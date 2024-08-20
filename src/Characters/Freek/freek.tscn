@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bog6h6vlxchda"]
+[gd_scene load_steps=17 format=3 uid="uid://bog6h6vlxchda"]
 
 [ext_resource type="Script" path="res://src/Characters/Freek/freek.gd" id="1_r4tme"]
 [ext_resource type="SpriteFrames" uid="uid://kijdvek67r3" path="res://src/Characters/Freek/freek_sprites.tres" id="2_07p1d"]
@@ -8,6 +8,11 @@
 [ext_resource type="Script" path="res://src/Characters/Freek/States/piloting.gd" id="6_10qjl"]
 [ext_resource type="Script" path="res://src/Characters/Freek/States/die.gd" id="6_pbdhg"]
 [ext_resource type="AudioStream" uid="uid://ct3i22hf11l6n" path="res://src/Pickups/metalLatch.ogg" id="8_big6s"]
+[ext_resource type="AudioStream" uid="uid://colbcamuifc3a" path="res://src/Characters/Freek/forceField_000.ogg" id="9_ki2q0"]
+[ext_resource type="AudioStream" uid="uid://b0cse4dyft7xj" path="res://src/Characters/Freek/explosionCrunch_000.ogg" id="10_ipayq"]
+[ext_resource type="AudioStream" uid="uid://bxl8mxabqye2k" path="res://src/UI/squirrel_happy_squeek.mp3" id="11_6n70k"]
+[ext_resource type="AudioStream" uid="uid://bg8fpaulcdi4c" path="res://src/Characters/Freek/footstep04.ogg" id="12_pff7q"]
+[ext_resource type="AudioStream" uid="uid://b8g43k7bdahvy" path="res://src/Characters/Freek/footstep05.ogg" id="12_pw4dj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vpejk"]
 radius = 6.0
@@ -77,6 +82,33 @@ collision_mask = 32768
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interaction_area"]
 shape = SubResource("CircleShape2D_aeget")
 
+[node name="pilot_sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_ki2q0")
+
+[node name="eject_sound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("10_ipayq")
+volume_db = -15.0
+pitch_scale = 2.0
+
+[node name="chirp_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_6n70k")
+autoplay = true
+
+[node name="movement_sound_high" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("12_pff7q")
+volume_db = -25.0
+pitch_scale = 1.6
+
+[node name="movement_sound_low" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("12_pw4dj")
+volume_db = -25.0
+pitch_scale = 1.8
+
+[connection signal="frame_changed" from="freek_sprites" to="." method="_on_freek_sprites_frame_changed"]
 [connection signal="area_entered" from="item_pickup_radius" to="." method="_on_item_pickup_radius_area_entered"]
 [connection signal="body_entered" from="interaction_area" to="." method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="interaction_area" to="." method="_on_interaction_area_body_exited"]

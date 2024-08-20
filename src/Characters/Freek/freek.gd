@@ -10,6 +10,10 @@ class_name Freek extends CharacterBody2D
 @onready var _collision_body: CollisionShape2D = %collision_body
 
 @onready var _pickup_sound: AudioStreamPlayer = %pickup_sound
+@onready var _pilot_sound: AudioStreamPlayer = %pilot_sound
+@onready var _eject_sound: AudioStreamPlayer = %eject_sound
+@onready var _movement_sound_high: AudioStreamPlayer = %movement_sound_high
+@onready var _movement_sound_low: AudioStreamPlayer = %movement_sound_low
 
 func _ready() -> void:
 	add_to_group("freek")
@@ -30,3 +34,12 @@ func _on_interaction_area_body_entered(_body: Node2D) -> void:
 
 func _on_interaction_area_body_exited(_body: Node2D) -> void:
 	PlayerState.is_freek_near_max = false
+
+
+func _on_freek_sprites_frame_changed() -> void:
+	if _freek_sprites.animation == "move":
+		if _freek_sprites.frame == 1:
+			_movement_sound_high.play()
+		elif _freek_sprites.frame == 3:
+			_movement_sound_low.play()
+			

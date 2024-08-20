@@ -7,8 +7,10 @@ const MOVE_IDLE = "Move_Idle"
 const MOVE_UNPOWERED = "Move_Unpowered"
 const MOVE_WINDUP = "Move_Windup"
 
-# how far a leg will attempt to move
-const LEG_MOVEMENT_SPEED: int = 60
+# how far a leg will attempt to move in a single gaunt
+const LEG_MOVEMENT_SPEED: int = 50
+
+const LEG_ANIMATION_DURATION = 0.5
 
 var max_player: Max
 
