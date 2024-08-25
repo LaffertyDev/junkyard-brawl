@@ -19,6 +19,7 @@ func physics_update(_delta: float) -> void:
 	 and not Input.is_action_pressed("move_left") \
 	 and not Input.is_action_pressed("move_right")):
 		finished.emit(IDLE)
+		return
 		
 	var input_direction_x := Input.get_axis("move_left", "move_right")
 	var input_direction_y := Input.get_axis("move_forward", "move_backward")
