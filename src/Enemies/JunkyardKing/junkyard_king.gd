@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		target_angle = target.position.angle_to_point(self.position) - (PI / 2)
 
 func take_damage(damage: int) -> void:
-	PlayerState.junkyard_king_health -= 1
+	PlayerState.junkyard_king_health -= damage
 	_torso.play("take_damage")
 
 func _on_gun_animation_finished() -> void:

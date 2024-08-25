@@ -10,7 +10,9 @@ class_name Freek extends CharacterBody2D
 @onready var _collision_body: CollisionShape2D = %collision_body
 
 @onready var _pickup_sound: AudioStreamPlayer = %pickup_sound
+@warning_ignore("unused_private_class_variable")
 @onready var _pilot_sound: AudioStreamPlayer = %pilot_sound
+@warning_ignore("unused_private_class_variable")
 @onready var _eject_sound: AudioStreamPlayer = %eject_sound
 @onready var _movement_sound_high: AudioStreamPlayer = %movement_sound_high
 @onready var _movement_sound_low: AudioStreamPlayer = %movement_sound_low

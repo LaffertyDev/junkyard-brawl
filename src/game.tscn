@@ -21,15 +21,16 @@ metadata/_edit_lock_ = true
 visible = false
 
 [node name="max" parent="." instance=ExtResource("1_x8fa0")]
-position = Vector2(-142, -1271)
+position = Vector2(0, 575)
 
 [node name="Freek" parent="." instance=ExtResource("2_px2hi")]
-position = Vector2(-92, -1241)
+position = Vector2(0, 1753)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("4_5g130")]
 unique_name_in_owner = true
+metadata/_edit_use_anchors_ = true
 
 [node name="level_one_swiper" parent="." instance=ExtResource("6_6e0x7")]
 position = Vector2(-5, 0)
@@ -52,18 +53,28 @@ position = Vector2(-162, 489)
 [node name="Spawner2" parent="." instance=ExtResource("7_i1o7u")]
 position = Vector2(816, -1035)
 
+[node name="Spawner4" parent="." instance=ExtResource("7_i1o7u")]
+position = Vector2(444, -937)
+rotation = 3.14159
+
 [node name="Spawner3" parent="." instance=ExtResource("7_i1o7u")]
-position = Vector2(686, -478)
+position = Vector2(717, -473)
+
+[node name="swiper" parent="." instance=ExtResource("6_6e0x7")]
+position = Vector2(636, -977)
+
+[node name="swiper2" parent="." instance=ExtResource("6_6e0x7")]
+position = Vector2(570, -964)
 
 [node name="Spawner5" parent="." instance=ExtResource("7_i1o7u")]
-position = Vector2(-41, -1508)
-rotation = 4.71239
+position = Vector2(310, -1542)
+
+[node name="Spawner" parent="." instance=ExtResource("7_i1o7u")]
+position = Vector2(-6, -1676)
+rotation = -1.5708
 
 [node name="JunkyardKing" parent="." instance=ExtResource("10_lumf2")]
-position = Vector2(102, -1404)
+position = Vector2(121, -1393)
 
 [node name="swiper5" parent="." instance=ExtResource("6_6e0x7")]
 position = Vector2(-31, -196)
-
-[node name="HealthPickup4" parent="." instance=ExtResource("9_jxf43")]
-position = Vector2(-102, -1276)

@@ -17,12 +17,10 @@ func take_damage(_damage: int) -> void:
 	%animation.play("die")
 
 func _on_activate_radius_body_entered(_body: Node2D) -> void:
-	print("Activated")
 	%animation.play("spawn")
 
 
-func _on_activate_radius_area_shape_entered(_area_rid: RID, _area: Area2D, area_shape_index: int, local_shape_index: int) -> void:
-	print("Activated")
+func _on_activate_radius_area_shape_entered(_area_rid: RID, _area: Area2D, _area_shape_index: int, _local_shape_index: int) -> void:
 	%animation.play("spawn")
 
 

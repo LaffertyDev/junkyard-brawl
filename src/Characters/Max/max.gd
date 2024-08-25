@@ -16,6 +16,7 @@ class_name Max extends CharacterBody2D
 @warning_ignore("unused_private_class_variable")
 @onready var _hammer_sound: AudioStreamPlayer = %hammer_sound
 @onready var _rotation_sound: AudioStreamPlayer = %audio_torso_rotate
+@warning_ignore("unused_private_class_variable")
 @onready var _engine_sound: AudioStreamPlayer = %engine_sound
 @warning_ignore("unused_private_class_variable")
 @onready var _hammer_attack_damage_scan_area: Area2D = %AttackDamageScanArea
@@ -40,10 +41,14 @@ func _physics_process(delta: float) -> void:
 	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:
 		var target_angle = get_global_mouse_position().angle_to_point(self.position) - (PI / 2)
 		var remaining_angle = int(abs(rad_to_deg(target_angle - _torso.rotation))) % 360
-		if remaining_angle > 45:
+		print(remaining_angle)
+		const angle_to_care = 5
+		if remaining_angle > angle_to_care and remaining_angle < (360 - angle_to_care):
 			start_rotating()
+			print("start", remaining_angle)
 		else:
 			stop_rotating()
+			print("stop", remaining_angle)
 		_torso.rotation = lerp_angle(_torso.rotation, target_angle, 1.25 * delta)
 	else:
 		stop_rotating()
