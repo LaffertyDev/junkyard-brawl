@@ -39,10 +39,8 @@ func _on_gun_animation_finished() -> void:
 			rayenemy.take_damage(1)
 		_gun.play("idle")
 
-
 func _on_bullet_anim_animation_finished() -> void:
 	_bullet.play("default")
-
 
 func _on_gun_animation_looped() -> void:
 	var enemies = _attack_range.get_overlapping_bodies()
