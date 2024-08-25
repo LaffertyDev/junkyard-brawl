@@ -29,6 +29,8 @@ func _on_gun_animation_finished() -> void:
 		var enemies = _attack_range.get_overlapping_bodies()
 		if enemies.size() > 0:
 			_gun.play("attack")
+		else:
+			_gun.play("idle")
 	elif _gun.animation == "attack":
 		_bullet.play("hit")
 		%gun_sound.play()

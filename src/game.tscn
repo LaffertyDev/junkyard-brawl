@@ -24,7 +24,7 @@ visible = false
 position = Vector2(0, 575)
 
 [node name="Freek" parent="." instance=ExtResource("2_px2hi")]
-position = Vector2(0, 1753)
+position = Vector2(-140, -1291)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

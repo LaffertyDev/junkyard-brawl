@@ -137,7 +137,6 @@ One week later me bad/improvement thoughts:
 
 * [Project] No icon
 
-* [Bug] Squirrel does not keep direction after ending movement
 * [Bug]: Animation connections in the state tree will replay and error out
 * [Bug]: At least on macos, Godot4 has a weird audio popping sound
 * [Bug]: If you leave junkyard king attack radius during a windup, he will get permanently stuck. Need an `idle` animation on line 31 of the king.
