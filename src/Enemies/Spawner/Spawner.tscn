@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bp2tjesipajy6"]
 
-[ext_resource type="Script" path="res://src/Enemies/Spawner/spawner.gd" id="1_olxsp"]
+[ext_resource type="Script" uid="uid://bb2s1f1614kvt" path="res://src/Enemies/Spawner/spawner.gd" id="1_olxsp"]
 [ext_resource type="SpriteFrames" uid="uid://1xff3xa75yde" path="res://src/Enemies/Spawner/spawner_sprites.tres" id="2_2bqor"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_x8vbg"]

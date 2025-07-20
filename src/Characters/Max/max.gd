@@ -41,14 +41,11 @@ func _physics_process(delta: float) -> void:
 	if PlayerState.current_pilot_state == Enums.PilotState.Piloting:
 		var target_angle = get_global_mouse_position().angle_to_point(self.position) - (PI / 2)
 		var remaining_angle = int(abs(rad_to_deg(target_angle - _torso.rotation))) % 360
-		print(remaining_angle)
 		const angle_to_care = 5
 		if remaining_angle > angle_to_care and remaining_angle < (360 - angle_to_care):
 			start_rotating()
-			print("start", remaining_angle)
 		else:
 			stop_rotating()
-			print("stop", remaining_angle)
 		_torso.rotation = lerp_angle(_torso.rotation, target_angle, 1.25 * delta)
 	else:
 		stop_rotating()

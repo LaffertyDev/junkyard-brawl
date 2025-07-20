@@ -1,142 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://dchyi7csuovx6"]
+[gd_scene load_steps=4 format=3 uid="uid://dchyi7csuovx6"]
 
 [ext_resource type="Texture2D" uid="uid://bcw15e7s0v4ka" path="res://src/World/world.png" id="2_n8jta"]
 [ext_resource type="PackedScene" uid="uid://c6o02co8ac886" path="res://src/World/junkyard_gate.tscn" id="3_524de"]
 [ext_resource type="PackedScene" uid="uid://dtfdwytmixfqu" path="res://src/World/shipping_container.tscn" id="4_tomv7"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_gyutu"]
-size = Vector2(356, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0p4u"]
-size = Vector2(20, 334)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6ttri"]
-size = Vector2(20, 367)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_v8o06"]
-size = Vector2(158, 48)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ix6hx"]
-size = Vector2(20, 545)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vhcqe"]
-size = Vector2(254, 64)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_i7pmj"]
-size = Vector2(20, 616)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yhwk7"]
-size = Vector2(704, 128)
 
 [node name="World" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_n8jta")
 metadata/_edit_lock_ = true
-
-[node name="Wall" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(0, 1834)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall"]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_gyutu")
-
-[node name="Wall2" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(-169, 1666)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall2"]
-position = Vector2(0, -5)
-shape = SubResource("RectangleShape2D_a0p4u")
-
-[node name="Wall3" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(170, 1681)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall3"]
-position = Vector2(0, -20.5)
-shape = SubResource("RectangleShape2D_6ttri")
-
-[node name="Wall4" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(-97, 1489)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall4"]
-position = Vector2(2, -9)
-shape = SubResource("RectangleShape2D_v8o06")
-
-[node name="Wall5" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(92, 1489)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall5"]
-position = Vector2(2, -9)
-shape = SubResource("RectangleShape2D_v8o06")
-
-[node name="Wall6" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(-76, 1308)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall6"]
-position = Vector2(2, -83.5)
-shape = SubResource("RectangleShape2D_ix6hx")
-
-[node name="Wall7" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(72, 1311)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall7"]
-position = Vector2(2, -83.5)
-shape = SubResource("RectangleShape2D_ix6hx")
-
-[node name="Wall8" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(-57, 925)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall8"]
-position = Vector2(-86, 3)
-shape = SubResource("RectangleShape2D_vhcqe")
-
-[node name="Wall9" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(229, 925)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall9"]
-position = Vector2(-86, 3)
-shape = SubResource("RectangleShape2D_vhcqe")
-
-[node name="Wall10" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(202, 678)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall10"]
-position = Vector2(0, -27)
-shape = SubResource("RectangleShape2D_i7pmj")
-
-[node name="Wall11" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(-202, 689)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall11"]
-position = Vector2(0, -27)
-shape = SubResource("RectangleShape2D_i7pmj")
-
-[node name="Wall12" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(-166, 324)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall12"]
-position = Vector2(-282, -4)
-shape = SubResource("RectangleShape2D_yhwk7")
-
-[node name="Wall13" type="StaticBody2D" parent="Sprite2D"]
-position = Vector2(730, 324)
-metadata/_edit_lock_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Wall13"]
-position = Vector2(-282, -4)
-shape = SubResource("RectangleShape2D_yhwk7")
 
 [node name="gate_level_once_entrance" parent="." instance=ExtResource("3_524de")]
 position = Vector2(0, 320)

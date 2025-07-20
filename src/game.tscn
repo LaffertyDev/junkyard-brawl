@@ -1,10 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://btutvf1fatmwy"]
+[gd_scene load_steps=12 format=3 uid="uid://btutvf1fatmwy"]
 
-[ext_resource type="Script" path="res://src/game.gd" id="1_5h0ui"]
+[ext_resource type="Script" uid="uid://qcjar33omphl" path="res://src/game.gd" id="1_5h0ui"]
 [ext_resource type="PackedScene" uid="uid://8d0tvl7vuu6" path="res://src/Arena.tscn" id="1_len5e"]
 [ext_resource type="PackedScene" uid="uid://c7rfvjpqsmeb8" path="res://src/Characters/Max/max.tscn" id="1_x8fa0"]
 [ext_resource type="PackedScene" uid="uid://dchyi7csuovx6" path="res://src/World/world.tscn" id="2_jhqfn"]
 [ext_resource type="PackedScene" uid="uid://bog6h6vlxchda" path="res://src/Characters/Freek/freek.tscn" id="2_px2hi"]
+[ext_resource type="PackedScene" uid="uid://bo17goqc3cmip" path="res://src/World/world2.tscn" id="3_sxe8e"]
 [ext_resource type="PackedScene" uid="uid://tr3eddb5yvvm" path="res://src/hud.tscn" id="4_5g130"]
 [ext_resource type="PackedScene" uid="uid://k3pncah0uhq7" path="res://src/Enemies/Swiper/swiper.tscn" id="6_6e0x7"]
 [ext_resource type="PackedScene" uid="uid://bp2tjesipajy6" path="res://src/Enemies/Spawner/spawner.tscn" id="7_i1o7u"]
@@ -17,11 +18,14 @@ script = ExtResource("1_5h0ui")
 [node name="World" parent="." instance=ExtResource("2_jhqfn")]
 metadata/_edit_lock_ = true
 
+[node name="World2" parent="." instance=ExtResource("3_sxe8e")]
+position = Vector2(0, 1672)
+
 [node name="Arena" parent="." instance=ExtResource("1_len5e")]
 visible = false
 
 [node name="max" parent="." instance=ExtResource("1_x8fa0")]
-position = Vector2(0, 575)
+position = Vector2(0, 603)
 
 [node name="Freek" parent="." instance=ExtResource("2_px2hi")]
 position = Vector2(0, 1672)
@@ -42,13 +46,13 @@ position = Vector2(-280, -530)
 position = Vector2(-63, -670)
 
 [node name="HealthPickup" parent="." instance=ExtResource("9_jxf43")]
-position = Vector2(-161, 414)
+position = Vector2(-159, 484)
 
 [node name="HealthPickup2" parent="." instance=ExtResource("9_jxf43")]
-position = Vector2(-162, 451)
+position = Vector2(-160, 521)
 
 [node name="HealthPickup3" parent="." instance=ExtResource("9_jxf43")]
-position = Vector2(-162, 489)
+position = Vector2(-160, 559)
 
 [node name="Spawner2" parent="." instance=ExtResource("7_i1o7u")]
 position = Vector2(816, -1035)

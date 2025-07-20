@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dtqk53x1p3g15"]
 
-[ext_resource type="Script" path="res://src/Enemies/JunkyardKing/junkyard_king.gd" id="1_atvvx"]
+[ext_resource type="Script" uid="uid://15dlf0mohjk5" path="res://src/Enemies/JunkyardKing/junkyard_king.gd" id="1_atvvx"]
 [ext_resource type="SpriteFrames" uid="uid://cp1vg2r1gvebf" path="res://src/Enemies/JunkyardKing/junkyard_king_torso_frames.tres" id="2_3jq2h"]
 [ext_resource type="SpriteFrames" uid="uid://ecd6f0gi1an7" path="res://src/Enemies/JunkyardKing/junkyard_king_gun.tres" id="2_cun45"]
 [ext_resource type="SpriteFrames" uid="uid://bv6uli0lfhm78" path="res://src/Enemies/JunkyardKing/bullet_animation.tres" id="4_xpr2b"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cf353ec4wn6fx"]
 
-[ext_resource type="Script" path="res://src/MenusAndScenes/screen_ui_defeat.gd" id="1_6tafg"]
+[ext_resource type="Script" uid="uid://d2m7002srhkmo" path="res://src/MenusAndScenes/screen_ui_defeat.gd" id="1_6tafg"]
 [ext_resource type="AudioStream" uid="uid://bxl8mxabqye2k" path="res://src/UI/squirrel_happy_squeek.mp3" id="2_iyyax"]
 
 [node name="Defeat" type="Control"]
